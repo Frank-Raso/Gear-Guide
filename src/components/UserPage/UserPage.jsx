@@ -9,9 +9,9 @@ function UserPage() {
   const gear = useSelector((store) => store.profileGear);
   const user = useSelector((store) => store.user);
 
-//   useEffect(() => {
-//     dispatch({ type: 'FETCH_GEAR' });
-// }, []);
+  useEffect(() => {
+    dispatch({ type: 'FETCH_GEAR' });
+}, []);
 
 
 return (
