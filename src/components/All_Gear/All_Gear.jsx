@@ -1,47 +1,39 @@
-
-
-import React from 'react';
+import React, { useEffect } from 'react';
+import LogOutButton from '../LogOutButton/LogOutButton';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import { useEffect } from 'react';
-import {Image} from 'cloudinary-react';
 
-// This is one of our simplest components
-// It doesn't have local state,
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is'
 function All_Gear() {
-  const [imageIDs, setImageIDs] = useState();
 
-  const loadImages = async () => {
-    try {
-      const res = await fetch('/api/images');
-      const data = await res.json();
-      console.log(data);
-      setImageIDs(data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  const dispatch = useDispatch();
+  const gear = useSelector((store) => store.allGear);
+  const user = useSelector((store) => store.user);
+
   useEffect(() => {
-    loadImages();
-  }, []);
-  return (
-    <div className="container">
-      <p>Welcome to the Gear Guide</p>
+    dispatch({ type: 'FETCH_ALLGEAR' });
+}, []);
 
-      <div>
-        <h1 className="title">All Gear</h1>
-        {imageIDs && imageIDs.map((imageId, index) => (
-          <Image
-            key={index}
-            cloudName="dzdhhbcfp"
-            publicId={imageId}
-            width="200"
-            crop="scale"
-          />))}
-      </div>
-    </div>
-  );
+
+return (
+  <div className="container">
+      <h2>Welcome, {user.username}!</h2>
+      <p>All Gear:</p>
+      <section className="movies">
+
+                {gear.map(g => {
+                    return (
+                        <div key={g.id} >
+                            <div className='catalog'>
+                                <h3 className='catalogTitle' >{g.title}</h3>
+                                <p className='catalogDescription'>{g.year}</p>
+                            </div>
+                        </div>
+                    );
+                })}
+            </section>
+  </div>
+);
 }
 
+// this allows us to use <App /> in index.js
 export default All_Gear;

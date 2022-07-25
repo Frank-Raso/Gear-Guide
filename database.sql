@@ -8,3 +8,13 @@ CREATE TABLE "user" (
     "username" VARCHAR (80) UNIQUE NOT NULL,
     "password" VARCHAR (1000) NOT NULL
 );
+
+CREATE TABLE "gear" (
+"id" SERIAL PRIMARY KEY,
+"title" VARCHAR (80) NOT NULL,
+"review" VARCHAR (1000) NOT NULL,
+"year" VARCHAR(10),
+"image"VARCHAR(1000),
+"user_id" INTEGER REFERENCES "user",
+"type_id" VARCHAR(25)
+);

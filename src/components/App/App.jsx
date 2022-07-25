@@ -73,7 +73,7 @@ function App() {
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
-            path="/AddGear"
+            path="/addGear"
           >
             {/* <InfoPage /> */}
             <AddReview/>
@@ -82,7 +82,7 @@ function App() {
           <ProtectedRoute
 
             exact
-            path="/All"
+            path="/all"
           >
 
             <All_Gear/>
@@ -91,7 +91,7 @@ function App() {
           <ProtectedRoute
 
             exact
-            path="/Guitars"
+            path="/guitars"
           >
 
             <Guitars/>
@@ -99,7 +99,7 @@ function App() {
           <ProtectedRoute
 
             exact
-            path="/Amps"
+            path="/amps"
           >
 
             <Amps/>
@@ -107,7 +107,7 @@ function App() {
           <ProtectedRoute
 
             exact
-            path="/Accesories"
+            path="/accesories"
           >
             <Accesories/>
           </ProtectedRoute>

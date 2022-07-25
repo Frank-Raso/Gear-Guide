@@ -10,6 +10,8 @@ const passport = require('./strategies/user.strategy');
 // Route includes
 const userRouter = require('./routes/user.router');
 const gearPostRouter = require('./routes/gearPost.router');
+const getProfileRouter = require('./routes/getProfile.router.js');
+const getAllRouter = require('./routes/getAll.router.js');
 // Body parser middleware
 // app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,6 +27,8 @@ app.use(passport.session());
 /* Routes */
 app.use('/api/user', userRouter);
 app.use('/api/AddGear', gearPostRouter);
+app.use('/api/profile', getProfileRouter)
+app.use('/api/all', getAllRouter)
 
 app.get('/api/images', async (req, res) => {
   const { resources } = await cloudinary.search

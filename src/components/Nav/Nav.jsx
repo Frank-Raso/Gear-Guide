@@ -28,19 +28,19 @@ function Nav() {
               Home
             </Link>
 
-            <Link className="navLink" to="/All">
+            <Link className="navLink" to="/all">
               All Gear
             </Link>
 
-            <Link className="navLink" to="/Guitars">
+            <Link className="navLink" to="/guitars">
               Guitars
             </Link>
 
-            <Link className="navLink" to="/Amps">
+            <Link className="navLink" to="/amps">
               Amps
             </Link>
 
-            <Link className="navLink" to="/Accesories">
+            <Link className="navLink" to="/accesories">
               Accesories
             </Link>
 

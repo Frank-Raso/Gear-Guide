@@ -17,3 +17,4 @@ router.post('/', (req, res) => {
 })
 
 module.exports = router; 
+// makes calls to add new gear data done.
