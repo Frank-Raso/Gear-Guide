@@ -19,6 +19,16 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import AddReview from '../AddReview/AddReview';
+import All_Gear from '../All_Gear/All_Gear';
+import Guitars from '../Guitars/Guitars';
+import Amps from '../Amps/Amps';
+import Accesories from '../Accesories/Accesories';
+
+
+
+
+
 
 import './App.css';
 
@@ -55,7 +65,7 @@ function App() {
           <ProtectedRoute
             // logged in shows UserPage else shows LoginPage
             exact
-            path="/user"
+            path="/profile"
           >
             <UserPage />
           </ProtectedRoute>
@@ -63,10 +73,57 @@ function App() {
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
-            path="/info"
+            path="/AddGear"
           >
-            <InfoPage />
+            {/* <InfoPage /> */}
+            <AddReview/>
           </ProtectedRoute>
+
+          <ProtectedRoute
+
+            exact
+            path="/All"
+          >
+
+            <All_Gear/>
+          </ProtectedRoute>
+
+          <ProtectedRoute
+
+            exact
+            path="/Guitars"
+          >
+
+            <Guitars/>
+          </ProtectedRoute>
+          <ProtectedRoute
+
+            exact
+            path="/Amps"
+          >
+
+            <Amps/>
+          </ProtectedRoute>
+          <ProtectedRoute
+
+            exact
+            path="/Accesories"
+          >
+            <Accesories/>
+          </ProtectedRoute>
+
+
+
+
+
+
+
+
+
+
+
+
+          
 
           <Route
             exact
