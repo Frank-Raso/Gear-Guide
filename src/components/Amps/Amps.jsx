@@ -30,7 +30,7 @@ function Amps() {
       <p>Welcome to the Gear Guide!</p>
 
       <div>
-        <h1 className="title">AMPS</h1>
+        <h1 className="title">Amps</h1>
         {imageIDs && imageIDs.map((imageId, index) => (
           <Image
             key={index}

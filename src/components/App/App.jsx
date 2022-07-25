@@ -47,7 +47,7 @@ function App() {
         <Nav />
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
-          <Redirect exact from="/" to="/home" />
+          <Redirect exact from="/" to="/profile" />
 
           {/* Visiting localhost:3000/about will show the about page. */}
           <Route
@@ -132,7 +132,7 @@ function App() {
             {user.id ?
               // If the user is already logged in, 
               // redirect to the /user page
-              <Redirect to="/user" />
+              <Redirect to="/profile" />
               :
               // Otherwise, show the login page
               <LoginPage />
@@ -146,7 +146,7 @@ function App() {
             {user.id ?
               // If the user is already logged in, 
               // redirect them to the /user page
-              <Redirect to="/user" />
+              <Redirect to="/profile" />
               :
               // Otherwise, show the registration page
               <RegisterPage />
@@ -160,7 +160,7 @@ function App() {
             {user.id ?
               // If the user is already logged in, 
               // redirect them to the /user page
-              <Redirect to="/user" />
+              <Redirect to="/profile" />
               :
               // Otherwise, show the Landing page
               <LandingPage />
@@ -169,7 +169,8 @@ function App() {
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
-            <h1>404</h1>
+            <h1>...404</h1>
+            <p>No Gear Here Bud</p>
           </Route>
         </Switch>
         <Footer />

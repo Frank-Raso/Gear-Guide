@@ -30,7 +30,7 @@ function Guitars() {
       <p>Welcome to the Gear Guide!</p>
         <p>The Gear Guide was created for musicians and gear heads to come together and build upon the knowlege base of the industry. </p>
       <div>
-        <h1 className="title">GUITARS</h1>
+        <h1 className="title">Guitars</h1>
         {imageIDs && imageIDs.map((imageId, index) => (
           <Image
             key={index}

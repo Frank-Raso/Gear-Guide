@@ -4,11 +4,11 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import {Image} from 'cloudinary-react';
+
 // This is one of our simplest components
 // It doesn't have local state,
 // It doesn't dispatch any redux actions or display any part of redux state
 // or even care what the redux state is'
-
 function All_Gear() {
   const [imageIDs, setImageIDs] = useState();
 
@@ -30,7 +30,7 @@ function All_Gear() {
       <p>Welcome to the Gear Guide</p>
 
       <div>
-        <h1 className="title">ALL GEAR</h1>
+        <h1 className="title">All Gear</h1>
         {imageIDs && imageIDs.map((imageId, index) => (
           <Image
             key={index}
