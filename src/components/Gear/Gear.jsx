@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
+import { Button } from '@material-ui/core';
 
 function Gear() {
     const user = useSelector((store) => store.user);
@@ -21,8 +22,8 @@ function Gear() {
             console.log('true');
             return (
                 <div>
-                    <button onClick={() => dispatch({ type: 'DELETE_GEAR', payload: id })}>Delete</button>
-                    <button onClick={() => dispatch({ type: 'EDIT_GEAR', payload: id })}>Edit</button>
+                    <Button variant="contained" color="primary" onClick={() => dispatch({ type: 'DELETE_GEAR', payload: id })}>Delete</Button>                    
+                    <Button variant="contained" color="primary" onClick={() => dispatch({ type: 'EDIT_GEAR', payload: id })}>Edit</Button>
                 </div>
             );
         } 
