@@ -40,8 +40,8 @@ function Nav() {
               Amps
             </Link>
 
-            <Link className="navLink" to="/accesories">
-              Accesories
+            <Link className="navLink" to="/accessories">
+              Accessories
             </Link>
 
             <Link className="navLink" to="/addgear">

@@ -9,7 +9,7 @@ import {Image} from 'cloudinary-react';
 // It doesn't dispatch any redux actions or display any part of redux state
 // or even care what the redux state is'
 
-function Accesories() {
+function Accessories() {
   const [imageIDs, setImageIDs] = useState();
 
   const loadImages = async () => {
@@ -30,7 +30,7 @@ function Accesories() {
       <p>Welcome to the Gear Guide!</p>
         <p>The Gear Guide was created for musicians and gear heads to come together and build upon the knowlege base of the industry. </p>
       <div>
-        <h1 className="title">Accesories</h1>
+        <h1 className="title">Accessories</h1>
         {imageIDs && imageIDs.map((imageId, index) => (
           <Image
             key={index}
@@ -44,4 +44,4 @@ function Accesories() {
   );
 }
 
-export default Accesories;
+export default Accessories;
