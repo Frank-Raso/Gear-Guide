@@ -6,6 +6,7 @@ import allGear from './allGear.reducer';
 import eachGear from './eachGear.reducer';
 import ampGear from './ampGear.reducer';
 import guitarGear from './guitarGear.reducer';
+import accessoriesGear from './accessoriesGear.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   eachGear,
   ampGear,
   guitarGear,
+  accessoriesGear,
 });
 
 export default rootReducer;

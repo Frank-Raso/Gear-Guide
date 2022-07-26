@@ -14,6 +14,7 @@ const getProfileRouter = require('./routes/getProfile.router.js');
 const getAllRouter = require('./routes/getAll.router.js');
 const getAmpsRouter = require('./routes/getAmps.router.js');
 const getGuitarsRouter = require('./routes/getGuitars.router.js');
+const getAccessoriesRouter = require('./routes/getAccessories.router.js');
 // Body parser middleware
 // app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -33,6 +34,8 @@ app.use('/api/profile', getProfileRouter);
 app.use('/api/all', getAllRouter);
 app.use('/api/amps',getAmpsRouter);
 app.use('/api/guitars',getGuitarsRouter);
+app.use('/api/accessories',getAccessoriesRouter);
+
 
 app.get('/api/images', async (req, res) => {
   const { resources } = await cloudinary.search
