@@ -28,10 +28,10 @@ function Gear() {
             {gear.length === 0 ?
                 <h1 className='spinner'></h1> :
                 <div className='card' >
-                    <h2>{gear[0].year}</h2>
-                    <h3>{gear[0].title}</h3>
+                    <h2>{gear[0].title}</h2>
+                    <h3>{gear[0].year}</h3>
                     <h4>{gear[0].type_id}</h4>
-                    {/* <p>{gear[0].img}</p> */}
+                    {/* <p>{gear[0].image}</p> */}
                     <p>{gear[0].review}</p>
                     </div>
                     }

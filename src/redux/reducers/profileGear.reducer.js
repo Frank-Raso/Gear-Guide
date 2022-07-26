@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
 
-const profileGear = (state =[], action) => {
+const profileGear = (state = [], action) => {
     switch (action.type) {
         case 'SET_PGEAR':
             return action.payload;

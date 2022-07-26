@@ -32,9 +32,9 @@ app.use('/api/user', userRouter);
 app.use('/api/AddGear', gearPostRouter);
 app.use('/api/profile', getProfileRouter);
 app.use('/api/all', getAllRouter);
-app.use('/api/amps',getAmpsRouter);
-app.use('/api/guitars',getGuitarsRouter);
-app.use('/api/accessories',getAccessoriesRouter);
+app.use('/api/amps', getAmpsRouter);
+app.use('/api/guitars', getGuitarsRouter);
+app.use('/api/accessories', getAccessoriesRouter);
 
 
 app.get('/api/images', async (req, res) => {

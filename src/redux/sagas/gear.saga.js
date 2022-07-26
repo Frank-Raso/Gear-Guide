@@ -19,7 +19,7 @@ function* getGear(action) {
 
 function* gearSaga() {
     yield takeLatest('GEAR_CONT', getGear);
-  
-  }
+
+}
 
 export default gearSaga;
