@@ -24,8 +24,7 @@ function Gear() {
 
     return (
         <div className='gear_page' >
-            <button onClick={back}>Back to Profile</button>
-            <button onClick={backAll}>Back to All Gear</button>
+
             {gear.length === 0 ?
                 <h1 className='spinner'></h1> :
                 <div className='card' >
