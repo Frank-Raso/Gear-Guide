@@ -3,6 +3,7 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import profileGear from './profileGear.reducer';
 import allGear from './allGear.reducer';
+import eachGear from './eachGear.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   profileGear, // will have an array of objects if someone is logged in
   allGear,
+  eachGear,
 });
 
 export default rootReducer;

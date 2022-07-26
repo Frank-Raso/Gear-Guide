@@ -24,7 +24,7 @@ import All_Gear from '../All_Gear/All_Gear';
 import Guitars from '../Guitars/Guitars';
 import Amps from '../Amps/Amps';
 import Accessories from '../Accessories/Accessories';
-
+import Gear from '../Gear/Gear';
 
 
 
@@ -69,6 +69,18 @@ function App() {
           >
             <UserPage />
           </ProtectedRoute>
+
+          <ProtectedRoute     
+          exact     
+            path="/gear/:id"
+          >
+
+            <Gear/>
+          </ProtectedRoute>
+
+
+
+
 
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage

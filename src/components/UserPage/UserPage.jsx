@@ -2,9 +2,10 @@ import React, { useEffect } from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 function UserPage() {
-
+    const history = useHistory();
     const dispatch = useDispatch();
     const gear = useSelector((store) => store.profileGear);
     const user = useSelector((store) => store.user);
@@ -13,27 +14,28 @@ function UserPage() {
         dispatch({ type: 'FETCH_GEAR' });
     }, []);
 
+    const gearR = (id) => {
+        history.push(`/gear/${id}`)
+    }
 
     return (
         <div className="container">
             <h2>Welcome, {user.username}!</h2>
             <p>Your Gear:</p>
-            <section className="movies">
-                {/* {gear.length===0 ?(
-                    <h1>...Loading</h1>
-                ):( */}
+            <section className="gear">
+            
                     <div>
-                {gear.map(g => {
+                {gear.map(eachGear => {
                     return (
-                        <div key={g.id} >
+                        <div  key={eachGear.id} >
                             <div className='catalog'>
-                                <h3 className='catalogTitle' >{g.title}</h3>
-                                <p className='catalogDescription'>{g.year}</p>
+                                <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.title}</h3>
+                                <p className='catalogDescription'>{eachGear.year}</p>
                             </div>
                         </div>
                     );
                 })}
-                </div>                    {/* </div>)} */}
+                </div>
             </section>
                 
         </div>
