@@ -21,7 +21,7 @@ function UserPage() {
     return (
         <div className="container">
             <h2>Welcome, {user.username}!</h2>
-            <p>{user.id}</p>
+            {/* <p>{user.id}</p> */}
             <p>Your Gear:</p>
             <section className="gear">
             
@@ -31,7 +31,8 @@ function UserPage() {
                         <div  key={eachGear.id} >
                             <div className='catalog'>
                                 <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.title}</h3>
-                                <p className='catalogDescription'>{eachGear.year}</p>
+                                <p className='catalogDescription'>---------</p>
+                                {/* <p>{eachGear.year}</p> */}
                             </div>
                         </div>
                     );

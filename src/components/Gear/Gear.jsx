@@ -14,7 +14,7 @@ function Gear() {
         console.log(id);
         dispatch({ type: 'GEAR_CONT', payload: id });
     }, []);
-    const upDel = () => {
+    const editDelete = () => {
         console.log('upDel');
         console.log(user.id);
         console.log(gear[0].user_id);
@@ -22,11 +22,11 @@ function Gear() {
             console.log('true');
             return (
                 <div>
-                    <Button variant="contained" color="primary" onClick={() => dispatch({ type: 'DELETE_GEAR', payload: id })}>Delete</Button>                    
+                    <Button variant="contained" color="primary" onClick={() => dispatch({ type: 'DELETE_GEAR', payload: id })}>Delete</Button>
                     <Button variant="contained" color="primary" onClick={() => dispatch({ type: 'EDIT_GEAR', payload: id })}>Edit</Button>
                 </div>
             );
-        } 
+        }
 
     }
 
@@ -39,15 +39,15 @@ function Gear() {
                 <div className='card' >
                     <h2>{gear[0].title}</h2>
                     <h3>{gear[0].year}</h3>
-                    <h4>{gear[0].type_id}</h4>
                     {/* <p>{gear[0].image}</p> */}
+                    <p>{gear[0].type_id}</p>
                     <p>{gear[0].review}</p>
-                    </div>
-                    }
-                    {upDel()}
+                </div>
+            }
+            {editDelete()}
         </div>
     );
 }
 export default Gear;
-{/* <p>{gear[0].user_id}</p> */}
+{/* <p>{gear[0].user_id}</p> */ }
                     // <p>{user.id}</p>
