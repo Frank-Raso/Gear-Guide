@@ -27,15 +27,15 @@ app.use(passport.session());
 /* Routes */
 app.use('/api/user', userRouter);
 app.use('/api/AddGear', gearPostRouter);
-app.use('/api/profile', getProfileRouter)
-app.use('/api/all', getAllRouter)
+app.use('/api/profile', getProfileRouter);
+app.use('/api/all', getAllRouter);
 
 app.get('/api/images', async (req, res) => {
   const { resources } = await cloudinary.search
-  .expression('folder: Prime')
-  .sort_by('public_id', 'desc')
-  .max_results(10)
-  .execute();
+    .expression('folder: Prime')
+    .sort_by('public_id', 'desc')
+    .max_results(10)
+    .execute();
 
   const publicIds = resources.map((file) => file.
     public_id);

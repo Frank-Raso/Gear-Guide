@@ -6,7 +6,7 @@ const pool = require('../modules/pool');
 
 router.get('/', (req, res) => {
   console.log('in /All GET');
-  const queryString = `SELECT * FROM gear`;
+  const queryString = `SELECT * FROM gear;`;
   pool.query(queryString).then((result) => {
     res.send(result.rows);
   }).catch((err) => {

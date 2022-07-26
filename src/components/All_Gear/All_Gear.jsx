@@ -5,20 +5,20 @@ import { useState } from 'react';
 
 function All_Gear() {
 
-  const dispatch = useDispatch();
-  const gear = useSelector((store) => store.allGear);
-  const user = useSelector((store) => store.user);
+    const dispatch = useDispatch();
+    const gear = useSelector((store) => store.allGear);
+    const user = useSelector((store) => store.user);
 
-  useEffect(() => {
-    dispatch({ type: 'FETCH_ALLGEAR' });
-}, []);
+    useEffect(() => {
+        dispatch({ type: 'FETCH_ALLGEAR' });
+    }, []);
 
 
-return (
-  <div className="container">
-      <h2>Welcome, {user.username}!</h2>
-      <p>All Gear:</p>
-      <section className="movies">
+    return (
+        <div className="container">
+            <h2>Welcome, {user.username}!</h2>
+            <p>All Gear:</p>
+            <section className="movies">
 
                 {gear.map(g => {
                     return (
@@ -31,8 +31,8 @@ return (
                     );
                 })}
             </section>
-  </div>
-);
+        </div>
+    );
 }
 
 // this allows us to use <App /> in index.js

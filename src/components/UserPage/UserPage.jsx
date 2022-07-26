@@ -5,20 +5,20 @@ import { useState } from 'react';
 
 function UserPage() {
 
-  const dispatch = useDispatch();
-  const gear = useSelector((store) => store.profileGear);
-  const user = useSelector((store) => store.user);
+    const dispatch = useDispatch();
+    const gear = useSelector((store) => store.profileGear);
+    const user = useSelector((store) => store.user);
 
-  useEffect(() => {
-    dispatch({ type: 'FETCH_GEAR' });
-}, []);
+    useEffect(() => {
+        dispatch({ type: 'FETCH_GEAR' });
+    }, []);
 
 
-return (
-  <div className="container">
-      <h2>Welcome, {user.username}!</h2>
-      <p>Your Gear:</p>
-      <section className="movies">
+    return (
+        <div className="container">
+            <h2>Welcome, {user.username}!</h2>
+            <p>Your Gear:</p>
+            <section className="movies">
 
                 {gear.map(g => {
                     return (
@@ -31,8 +31,8 @@ return (
                     );
                 })}
             </section>
-  </div>
-);
+        </div>
+    );
 }
 
 // this allows us to use <App /> in index.js
