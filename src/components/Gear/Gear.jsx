@@ -14,10 +14,8 @@ function Gear() {
         console.log(id);
         dispatch({ type: 'GEAR_CONT', payload: id });
     }, []);
-    const editDelete = () => {
+    const upDel = () => {
         console.log('upDel');
-        console.log(user.id);
-        console.log(gear[0].user_id);
         if (user.id === gear[0].user_id) {
             console.log('true');
             return (
@@ -43,8 +41,8 @@ function Gear() {
                     <p>{gear[0].type_id}</p>
                     <p>{gear[0].review}</p>
                 </div>
-            }
-            {editDelete()}
+            }{upDel()}
+
         </div>
     );
 }

@@ -31,7 +31,6 @@ function UserPage() {
                         <div  key={eachGear.id} >
                             <div className='catalog'>
                                 <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.title}</h3>
-                                <p className='catalogDescription'>---------</p>
                                 {/* <p>{eachGear.year}</p> */}
                             </div>
                         </div>
