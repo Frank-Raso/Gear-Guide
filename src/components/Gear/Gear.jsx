@@ -40,8 +40,9 @@ function Gear() {
                     {/* <p>{gear[0].image}</p> */}
                     <p>{gear[0].type_id}</p>
                     <p>{gear[0].review}</p>
+                    <div>{upDel()}</div>
                 </div>
-            }{upDel()}
+            }
 
         </div>
     );
