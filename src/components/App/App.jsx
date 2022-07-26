@@ -23,7 +23,7 @@ import AddReview from '../AddReview/AddReview';
 import All_Gear from '../All_Gear/All_Gear';
 import Guitars from '../Guitars/Guitars';
 import Amps from '../Amps/Amps';
-import Accesories from '../Accesories/Accesories';
+import Accessories from '../Accessories/Accessories';
 
 
 
@@ -107,9 +107,9 @@ function App() {
           <ProtectedRoute
 
             exact
-            path="/accesories"
+            path="/Accessories"
           >
-            <Accesories/>
+            <Accessories/>
           </ProtectedRoute>
 
 
