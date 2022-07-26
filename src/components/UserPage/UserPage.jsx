@@ -19,7 +19,10 @@ function UserPage() {
             <h2>Welcome, {user.username}!</h2>
             <p>Your Gear:</p>
             <section className="movies">
-
+                {/* {gear.length===0 ?(
+                    <h1>...Loading</h1>
+                ):( */}
+                    <div>
                 {gear.map(g => {
                     return (
                         <div key={g.id} >
@@ -30,7 +33,9 @@ function UserPage() {
                         </div>
                     );
                 })}
+                </div>                    {/* </div>)} */}
             </section>
+                
         </div>
     );
 }
