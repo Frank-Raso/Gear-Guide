@@ -21,6 +21,7 @@ function UserPage() {
     return (
         <div className="container">
             <h2>Welcome, {user.username}!</h2>
+            <p>{user.id}</p>
             <p>Your Gear:</p>
             <section className="gear">
             

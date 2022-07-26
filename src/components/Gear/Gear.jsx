@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 
 function Gear() {
-
+    const user = useSelector((store) => store.user);
     const history = useHistory();
     const dispatch = useDispatch();
     const gear = useSelector((store) => store.eachGear);
@@ -13,14 +13,22 @@ function Gear() {
         console.log(id);
         dispatch({ type: 'GEAR_CONT', payload: id });
     }, []);
-    const back = () => {
-        console.log('back');
-        history.push('/profile');
+    const upDel = () => {
+        console.log('upDel');
+        console.log(user.id);
+        console.log(gear[0].user_id);
+        if (user.id === gear[0].user_id) {
+            console.log('true');
+            return (
+                <div>
+                    <button onClick={() => dispatch({ type: 'DELETE_GEAR', payload: id })}>Delete</button>
+                    <button onClick={() => dispatch({ type: 'EDIT_GEAR', payload: id })}>Edit</button>
+                </div>
+            );
+        } 
+
     }
-    const backAll = () => {
-        console.log('back');
-        history.push('/all');
-    }
+
 
     return (
         <div className='gear_page' >
@@ -35,7 +43,10 @@ function Gear() {
                     <p>{gear[0].review}</p>
                     </div>
                     }
+                    {upDel()}
         </div>
     );
 }
 export default Gear;
+{/* <p>{gear[0].user_id}</p> */}
+                    // <p>{user.id}</p>
