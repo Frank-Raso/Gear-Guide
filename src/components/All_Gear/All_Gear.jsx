@@ -2,9 +2,10 @@ import React, { useEffect } from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 function All_Gear() {
-
+    const history = useHistory();
     const dispatch = useDispatch();
     const gear = useSelector((store) => store.allGear);
     const user = useSelector((store) => store.user);
@@ -12,24 +13,27 @@ function All_Gear() {
     useEffect(() => {
         dispatch({ type: 'FETCH_ALLGEAR' });
     }, []);
-
+    const gearR = (id) => {
+        history.push(`/gear/${id}`)
+    }
 
     return (
         <div className="container">
-            <h2>Welcome, {user.username}!</h2>
-            <p>All Gear:</p>
-            <section className="movies">
+            <h2>All Gear</h2>
+            <section className="gear">
 
-                {gear.map(g => {
+            <div>
+                {gear.map(eachGear => {
                     return (
-                        <div key={g.id} >
+                        <div  key={eachGear.id} >
                             <div className='catalog'>
-                                <h3 className='catalogTitle' >{g.title}</h3>
-                                <p className='catalogDescription'>{g.year}</p>
+                                <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.title}</h3>
+                                <p className='catalogDescription'>{eachGear.year}</p>
                             </div>
                         </div>
                     );
                 })}
+                </div>
             </section>
         </div>
     );

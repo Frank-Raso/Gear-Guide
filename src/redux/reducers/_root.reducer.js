@@ -4,6 +4,8 @@ import user from './user.reducer';
 import profileGear from './profileGear.reducer';
 import allGear from './allGear.reducer';
 import eachGear from './eachGear.reducer';
+import ampGear from './ampGear.reducer';
+import guitarGear from './guitarGear.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -17,6 +19,8 @@ const rootReducer = combineReducers({
   profileGear, // will have an array of objects if someone is logged in
   allGear,
   eachGear,
+  ampGear,
+  guitarGear,
 });
 
 export default rootReducer;
