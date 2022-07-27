@@ -75,10 +75,9 @@ function Edit() {
       };
         console.log(gearPost);
         dispatch({ type: 'EDIT_GEAR', payload: gearPost });
-
+        history.push('/profile')
     }
     handleSubmitFile(event);
-    history.push('/profile')
   }
 
   const handleFileInputChange = (e) => {
