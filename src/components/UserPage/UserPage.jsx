@@ -23,7 +23,7 @@ function UserPage() {
     return (
         <div className="container">
             <Avatar
-            >{user.username[0]}        
+            >{user.username[0]}
             </Avatar>
             <p>Welcome, {user.username}!</p>
             {/* <p>{user.id}</p> */}
@@ -33,9 +33,11 @@ function UserPage() {
                     return (
                         <div className='GearItem' key={eachGear.id} >
                             <div className='catalog'>
-                                <Avatar onClick={() => gearR(eachGear.id)} src={eachGear.image}
-                                    sx={{ width: 56, height: 56 }}
-                                />
+                                {/* <Avatar variant='rounded' onClick={() => gearR(eachGear.id)} src={eachGear.image}
+                                /> */}
+                                <img className='AccessoryImg' onClick={() => gearR(eachGear.id)}
+                                    src={eachGear.image} ></img>
+
 
                                 <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.year}  :  {eachGear.title}</h3>
 
