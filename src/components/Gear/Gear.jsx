@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import './Gear.css';
+import {Avatar} from '@material-ui/core';
 
 
 function Gear() {
@@ -48,6 +49,9 @@ function Gear() {
 
                 <h1 className='spinner'></h1> :
                 <div className='card' >
+                    {/* <Avatar 
+                    onClick={'goes to users profile (stretch_goal)'} >{user.username[0]}</Avatar> */}
+
                     <h2>{gear[0].title}</h2>
                     <h3>{gear[0].year}</h3>
                     <img src={gear[0].image} alt="" />

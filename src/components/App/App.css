@@ -2,7 +2,7 @@ html,
 body,
 #react-root {
   height: 100%;
-  background-color: rgb(19, 20, 20);
+  background-color: rgb(40, 42, 42);
   color:rgb(164, 163, 160)
 }
 
@@ -112,4 +112,24 @@ Form Treatment
 input {
   margin: 5px;
   margin-bottom: 10px;
+}
+div{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.GearList{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: auto;
+}
+.GearItem{
+    padding: 25px;
+    width: 360px;
+    height: 50px;
+    margin: auto;
+    border-radius: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
 }

@@ -3,7 +3,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-
+import { Avatar } from '@material-ui/core';
 function Guitars() {
     const history = useHistory();
     const dispatch = useDispatch();
@@ -22,17 +22,21 @@ function Guitars() {
             <h2>Guitars</h2>
             <section className="gear">
 
-            <div>
-                {gear.map(eachGear => {
-                    return (
-                        <div  key={eachGear.id} >
-                            <div className='catalog'>
-                                <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.year}  :  {eachGear.title}</h3>
-                                {/* <p className='catalogDescription'>{eachGear.year}</p> */}
+                <div>
+                    {gear.map(eachGear => {
+                        return (
+                            <div key={eachGear.id} >
+                                <div className='catalog'>
+                                    <Avatar src={eachGear.image}
+                                        onClick={() => gearR(eachGear.id)}
+                                    ></Avatar>
+
+                                    <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.year}  :  {eachGear.title}</h3>
+                                    {/* <p className='catalogDescription'>{eachGear.year}</p> */}
+                                </div>
                             </div>
-                        </div>
-                    );
-                })}
+                        );
+                    })}
                 </div>
             </section>
         </div>

@@ -2,10 +2,14 @@ import React, { useEffect } from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
+import axios from 'axios';
 import './AddReview.css';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
-import axios from 'axios';
+import { TextField } from '@material-ui/core';
+import { MenuItem } from '@material-ui/core';
+import { FormControl, Select } from '@material-ui/core';
+import {InputLabel} from '@material-ui/core';
 
 
 function AddReview() {
@@ -80,7 +84,7 @@ function AddReview() {
     handleSubmitFile(event);
     history.push('/profile')
   }
-
+ let age;
   const handleFileInputChange = (e) => {
     const file = e.target.files[0];
     previewFile(file);
@@ -118,6 +122,7 @@ function AddReview() {
         <p>Upload a new review here</p>
         <h1>Add Gear:</h1>
         <input type="text" placeholder='Gear Make/Model' onChange={makeIn} />
+        {/* <TextField className='textfield'  type="text" onChange={makeIn} id="outlined-basic" label="Gear make/model" variant="outlined" /> */}
 
         <select onChange={typeIn} >
           <option value="" selected disabled hidden>Gear Type</option>
@@ -125,10 +130,13 @@ function AddReview() {
           <option value="Amp">Amp</option>
           <option value="Accessory">Accessory</option>
         </select>
-
+        
         <input type="text" placeholder='Year' onChange={yearIn} />
+        {/* <TextField className='textfield' type="text" onChange={yearIn} id="outlined-basic" label="Year" variant="outlined" /> */}
 
         <input type="text" placeholder='Review' onChange={reviewIn} />
+        {/* <TextField className='textfield' type="text" onChange={reviewIn} id="outlined-basic" label="Review" variant="outlined" /> */}
+
 
         <input type="file" name='image' onChange={handleFileInputChange} value={fileInputState}
           className={"form-input"} />

@@ -3,6 +3,8 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Avatar } from '@material-ui/core';
+import './All_Gear.css';
 
 function All_Gear() {
     const history = useHistory();
@@ -18,23 +20,26 @@ function All_Gear() {
     }
 
     return (
-        <div className="container">
-            <h2>All Gear</h2>
-            <section className="gear">
 
-            <div>
+        <div>
+            <h2>All Gear</h2>
+            <div className="GearList">
                 {gear.map(eachGear => {
                     return (
-                        <div  key={eachGear.id} >
-                            <div className='catalog'>
+                        <div className='GearItem' key={eachGear.id} >
+                            <div>
+                                <Avatar
+                                    onClick={() => gearR(eachGear.id)}
+                                    src={eachGear.image}></Avatar>
                                 <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.year}  :  {eachGear.title}</h3>
                                 {/* <p className='catalogDescription'>{eachGear.year}</p> */}
                             </div>
                         </div>
+
+
                     );
                 })}
-                </div>
-            </section>
+            </div>
         </div>
     );
 }

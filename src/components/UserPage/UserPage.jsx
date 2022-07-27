@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './UserPage.css';
+import { Avatar } from '@material-ui/core';
+
 function UserPage() {
     const history = useHistory();
     const dispatch = useDispatch();
@@ -20,25 +22,29 @@ function UserPage() {
 
     return (
         <div className="container">
-            <h2>Welcome, {user.username}!</h2>
+            <Avatar
+            >{user.username[0]}        
+            </Avatar>
+            <p>Welcome, {user.username}!</p>
             {/* <p>{user.id}</p> */}
             <p>Your Gear:</p>
-            <section className="gear">
-            
-                    <div className='GearList'>
+            <div className='GearList'>
                 {gear.map(eachGear => {
                     return (
                         <div className='GearItem' key={eachGear.id} >
                             <div className='catalog'>
+                                <Avatar onClick={() => gearR(eachGear.id)} src={eachGear.image}
+                                    sx={{ width: 56, height: 56 }}
+                                />
+
                                 <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.year}  :  {eachGear.title}</h3>
+
                                 {/* <h5>{eachGear.year}</h5> */}
                             </div>
                         </div>
                     );
                 })}
-                </div>
-            </section>
-                
+            </div>
         </div>
     );
 }
