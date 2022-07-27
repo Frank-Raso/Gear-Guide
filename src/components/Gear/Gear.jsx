@@ -16,13 +16,23 @@ function Gear() {
         console.log(id);
         dispatch({ type: 'GEAR_CONT', payload: id });
     }, []);
+
+    const delete_Gear = async () => {
+        try{
+        dispatch({ type: 'DELETE_GEAR', payload: id });
+        await history.push('/');
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     const upDel = () => {
         console.log('upDel');
         if (user.id === gear[0].user_id) {
             console.log('true');
             return (
                 <div>
-                    <Button variant="contained" color="primary" onClick={() => dispatch({ type: 'DELETE_GEAR', payload: id })}>Delete</Button>
+                    <Button variant="contained" color="primary" onClick={delete_Gear}>Delete</Button>
                     <Button variant="contained" color="primary" onClick={() => dispatch({ type: 'EDIT_GEAR', payload: id })}>Edit</Button>
                 </div>
             );
