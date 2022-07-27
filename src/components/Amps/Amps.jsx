@@ -20,7 +20,7 @@ function Amps() {
     }
 
     return (
-        <div>
+        <div className='container' >
             <h2>Amps</h2>
                 <div className="AmpList" >
                     {gear.map(eachGear => {

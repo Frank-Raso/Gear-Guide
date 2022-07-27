@@ -9,12 +9,14 @@ div{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: auto;
 }
-.GearItem{
-    padding: 25px;
-    width: 360px;
-    height: 50px;
-    margin: auto;
+.GearImg{
+    height: 200px;
+    width: auto;
     border-radius: 15px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: large;
+}
+.GearImg:hover{
+    transform: scale(1.1);
+    transition: all .1s ease;
+    cursor: pointer;
+
 }

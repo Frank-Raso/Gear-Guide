@@ -35,7 +35,7 @@ function UserPage() {
                             <div className='catalog'>
                                 {/* <Avatar variant='rounded' onClick={() => gearR(eachGear.id)} src={eachGear.image}
                                 /> */}
-                                <img className='AccessoryImg' onClick={() => gearR(eachGear.id)}
+                                <img className='GearImg' onClick={() => gearR(eachGear.id)}
                                     src={eachGear.image} ></img>
 
 
