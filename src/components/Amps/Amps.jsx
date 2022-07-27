@@ -27,8 +27,8 @@ function Amps() {
                     return (
                         <div  key={eachGear.id} >
                             <div className='catalog'>
-                                <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.title}</h3>
-                                <p className='catalogDescription'>{eachGear.year}</p>
+                                <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.year}  :  {eachGear.title}</h3>
+                                {/* <p className='catalogDescription'>{eachGear.year}</p> */}
                             </div>
                         </div>
                     );

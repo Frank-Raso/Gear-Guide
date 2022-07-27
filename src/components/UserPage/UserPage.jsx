@@ -3,7 +3,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-
+import './UserPage.css';
 function UserPage() {
     const history = useHistory();
     const dispatch = useDispatch();
@@ -25,13 +25,13 @@ function UserPage() {
             <p>Your Gear:</p>
             <section className="gear">
             
-                    <div>
+                    <div className='GearList'>
                 {gear.map(eachGear => {
                     return (
-                        <div  key={eachGear.id} >
+                        <div className='GearItem' key={eachGear.id} >
                             <div className='catalog'>
-                                <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.title}</h3>
-                                {/* <p>{eachGear.year}</p> */}
+                                <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.year}  :  {eachGear.title}</h3>
+                                {/* <h5>{eachGear.year}</h5> */}
                             </div>
                         </div>
                     );
