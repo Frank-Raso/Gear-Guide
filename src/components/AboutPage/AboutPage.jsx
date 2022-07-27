@@ -4,6 +4,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import {Image} from 'cloudinary-react';
+import './AboutPage.css';
 // This is one of our simplest components
 // It doesn't have local state,
 // It doesn't dispatch any redux actions or display any part of redux state
@@ -33,6 +34,7 @@ function AboutPage() {
         <h1 className="title">About Page</h1>
         {imageIDs && imageIDs.map((imageId, index) => (
           <Image
+          className="image"
             key={index}
             cloudName="dzdhhbcfp"
             publicId={imageId}

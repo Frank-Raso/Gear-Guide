@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Avatar } from '@material-ui/core';
+import './Accessories.css';
 function Accessories() {
     const history = useHistory();
     const dispatch = useDispatch();
@@ -18,18 +19,18 @@ function Accessories() {
     }
 
     return (
-        <div className="container">
+        <div>
             <h2>Accessories</h2>
-            <section className="gear">
-
-                <div>
+                <div className="AccessoryList" >
                     {gear.map(eachGear => {
                         return (
                             <div key={eachGear.id} >
-                                <div className='catalog'>
-                                    <Avatar src={eachGear.image}
+                                <div>
+                                    {/* <Avatar src={eachGear.image}
                                         onClick={() => gearR(eachGear.id)}
-                                    ></Avatar>
+                                    ></Avatar> */}
+                                    <img className='AccessoryImg' onClick={() => gearR(eachGear.id)}
+                                    src={eachGear.image} ></img>
 
                                     <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.year}  :  {eachGear.title}</h3>
                                     {/* <p className='catalogDescription'>{eachGear.year}</p> */}
@@ -38,7 +39,6 @@ function Accessories() {
                         );
                     })}
                 </div>
-            </section>
         </div>
     );
 }

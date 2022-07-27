@@ -23,15 +23,19 @@ function All_Gear() {
 
         <div>
             <h2>All Gear</h2>
-            <div className="GearList">
+            <div className="AllGearList">
                 {gear.map(eachGear => {
                     return (
-                        <div className='GearItem' key={eachGear.id} >
+                        <div key={eachGear.id} >
                             <div>
-                                <Avatar
+                                {/* <Avatar
                                     onClick={() => gearR(eachGear.id)}
-                                    src={eachGear.image}></Avatar>
-                                <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.year}  :  {eachGear.title}</h3>
+                                    src={eachGear.image}></Avatar> */}
+
+                                    <img className='AllImg' onClick={() => gearR(eachGear.id)}
+                                    src={eachGear.image} ></img>
+
+                                <h3 onClick={() => gearR(eachGear.id)} className='AllCatalogTitle' >{eachGear.year}  :  {eachGear.title}</h3>
                                 {/* <p className='catalogDescription'>{eachGear.year}</p> */}
                             </div>
                         </div>

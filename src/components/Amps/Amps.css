@@ -3,18 +3,18 @@ div{
     margin: 0 auto;
 }
 
-.AllGearList{
+.AmpList{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: auto;
 }
-.AllImg{
+.AmpImg{
     height: 200px;
     width: auto;
     border-radius: 15px;
 }
-.AllImg:hover{
+.AmpImg:hover{
     transform: scale(1.1);
     transition: all .1s ease;
     cursor: pointer;

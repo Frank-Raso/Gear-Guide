@@ -3,18 +3,19 @@ div{
     margin: 0 auto;
 }
 
-.AllGearList{
+.GuitarList{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: auto;
 }
-.AllImg{
+
+.GuitarImg{
     height: 200px;
     width: auto;
     border-radius: 15px;
 }
-.AllImg:hover{
+.GuitarImg:hover{
     transform: scale(1.1);
     transition: all .1s ease;
     cursor: pointer;
