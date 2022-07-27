@@ -32,6 +32,10 @@ function Gear() {
         //         console.log(error);
         //     }
         // }
+const editGear = () => {
+    console.log('/In edit')
+    history.push(`/edit/${id}`);
+}
 
     const upDel = () => {
             console.log('upDel');
@@ -40,7 +44,7 @@ function Gear() {
                 return (
                     <div>
                         <Button variant="contained" color="primary" onClick={delete_Gear}>Delete</Button>
-                        <Button variant="contained" color="primary" onClick={() => dispatch({ type: 'EDIT_GEAR', payload: id })}>Edit</Button>
+                        <Button variant="contained" color="primary" onClick={editGear}>Edit</Button>
                     </div>
                 );
             }

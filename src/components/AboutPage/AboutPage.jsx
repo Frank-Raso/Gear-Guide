@@ -28,10 +28,10 @@ function AboutPage() {
   }, []);
   return (
     <div className="container">
-      <p>Welcome to the Gear Guide!</p>
-        <p>The Gear Guide was created for musicians and gear heads to come together and build upon the knowlege base of the industry. </p>
+      <h4>Welcome to the Gear Guide!</h4>
+        <p className='aboutText' >The Gear Guide was created for musicians and gear heads to come together and build upon the knowlege base of the industry, and to help upcoming musicians find the gear they love! </p>
       <div>
-        <h1 className="title">About Page</h1>
+
         {imageIDs && imageIDs.map((imageId, index) => (
           <Image
           className="image"

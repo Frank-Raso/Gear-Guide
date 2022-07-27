@@ -1,3 +1,9 @@
-.image{
+.image {
     border-radius: 15px;
+}
+
+.aboutText {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
 }

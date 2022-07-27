@@ -25,6 +25,7 @@ import Guitars from '../Guitars/Guitars';
 import Amps from '../Amps/Amps';
 import Accessories from '../Accessories/Accessories';
 import Gear from '../Gear/Gear';
+import Edit from '../EditPage/Edit';
 
 
 
@@ -78,6 +79,13 @@ function App() {
             <Gear/>
           </ProtectedRoute>
 
+          <ProtectedRoute     
+          exact     
+            path="/edit/:id"
+          >
+
+            <Edit/>
+          </ProtectedRoute>
 
 
 

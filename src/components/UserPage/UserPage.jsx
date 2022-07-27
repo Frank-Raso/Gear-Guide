@@ -39,7 +39,7 @@ function UserPage() {
                                     src={eachGear.image} ></img>
 
 
-                                <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.year}  :  {eachGear.title}</h3>
+                                <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.title}</h3>
 
                                 {/* <h5>{eachGear.year}</h5> */}
                             </div>

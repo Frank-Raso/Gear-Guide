@@ -15,6 +15,7 @@ const getAllRouter = require('./routes/getAll.router.js');
 const getAmpsRouter = require('./routes/getAmps.router.js');
 const getGuitarsRouter = require('./routes/getGuitars.router.js');
 const getAccessoriesRouter = require('./routes/getAccessories.router.js');
+const editGearRouter = require('./routes/editGear.router.js');
 // Body parser middleware
 // app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -35,6 +36,7 @@ app.use('/api/all', getAllRouter);
 app.use('/api/amps', getAmpsRouter);
 app.use('/api/guitars', getGuitarsRouter);
 app.use('/api/accessories', getAccessoriesRouter);
+app.use('/api/edit', editGearRouter);
 
 
 app.get('/api/images', async (req, res) => {
