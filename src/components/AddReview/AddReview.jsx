@@ -106,6 +106,14 @@ function AddReview() {
     if (!previewSource) return;
     uploadImage(previewSource)
   }
+
+
+
+  // const uploadImage = async (file) => {
+  //   dispatch({ type: 'UPLOAD_IMAGE',payload: file }) 
+  //   console.log('uploading image');
+  // };
+
   const uploadImage = async (base64EncodedImage) => {
   
     try {
