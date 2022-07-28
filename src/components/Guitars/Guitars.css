@@ -1,21 +1,22 @@
-div{
+div {
     text-align: center;
     margin: 0 auto;
 }
 
-.GuitarList{
+.GuitarList {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: auto;
 }
 
-.GuitarImg{
+.GuitarImg {
     height: 200px;
     width: auto;
     border-radius: 15px;
 }
-.GuitarImg:hover{
+
+.GuitarImg:hover {
     transform: scale(1.1);
     transition: all .3s ease;
     cursor: pointer;

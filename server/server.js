@@ -61,10 +61,11 @@ app.post('/api/upload', async (req, res) => {
       upload_preset: 'ml_default',
     });
     console.log(uploadedResponse);
-    res.json({ msg: "Success", data: uploadedResponse });
+    console.log('hello Georgie',uploadedResponse.url);
+    res.send({ msg: "Success", data: uploadedResponse });
   } catch (err) {
     console.log(err)
-    res.status(500).json({ err: 'something went wrong', data: err });
+    res.status(500).send({ err: 'something went wrong', data: err });
   }
 });
 

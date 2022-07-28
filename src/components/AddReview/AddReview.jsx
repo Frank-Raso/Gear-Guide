@@ -8,10 +8,14 @@ import { useDispatch } from 'react-redux'
 import { TextField } from '@material-ui/core';
 import { MenuItem } from '@material-ui/core';
 import { FormControl, Select } from '@material-ui/core';
-import {InputLabel} from '@material-ui/core';
+import { InputLabel } from '@material-ui/core';
 
 
 function AddReview() {
+  let imgtest = 'https://imgs.search.brave.com/osRkB2Q1GE8OZ1kTUXJMU5R16P-J3jbUQCoqg0njG0k/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9jZG4u/c2hvcGlmeS5jb20v/cy9maWxlcy8xLzEx/NDAvMjQyNi9wcm9k/dWN0cy9HaWJzb24t/VVNBLTE5MjctTGVz/LVBhdWwtQ3VzdG9t/LVJlaXNzdWUtVk9T/LUVsZWN0cmljLUd1/aXRhci1FYm9ueS0x/MjM4NV8xNjAweDE2/MDAuanBnP3Y9MTU3/MTQzOTIzNw'
+
+  let imgSrc = imgtest
+  
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -55,19 +59,21 @@ function AddReview() {
 
     if (makeModel == "") {
       alert('Please add Make/Model before continuing')
-    }else if (type == "") {
+    } else if (type == "") {
       alert('Please add Type before continuing')
-    }else if (year == "") {
+    } else if (year == "") {
       alert('Please add Year before continuing')
-    }else if (review == "") {
+    } else if (review == "") {
       alert('Please add Review before continuing')
     }
     else {
+
       let gearPost = {
         title: makeModel,
         type_id: type,
         year: year,
         review: review,
+        image: imgSrc,
         user_id: user.id,
       };
       axios.post('/api/AddGear', gearPost).then((response) => {
@@ -82,7 +88,7 @@ function AddReview() {
     }
     handleSubmitFile(event);
   }
- let age;
+  let age;
   const handleFileInputChange = (e) => {
     const file = e.target.files[0];
     previewFile(file);
@@ -101,7 +107,7 @@ function AddReview() {
     uploadImage(previewSource)
   }
   const uploadImage = async (base64EncodedImage) => {
-
+  
     try {
       await fetch('/api/upload', {
         method: 'POST',
@@ -128,7 +134,7 @@ function AddReview() {
           <option value="Amp">Amp</option>
           <option value="Accessory">Accessory</option>
         </select>
-        
+
         <input type="text" placeholder='Year' onChange={yearIn} />
         {/* <TextField className='textfield' type="text" onChange={yearIn} id="outlined-basic" label="Year" variant="outlined" /> */}
 
