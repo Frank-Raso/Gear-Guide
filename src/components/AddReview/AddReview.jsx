@@ -54,13 +54,13 @@ function AddReview() {
     console.log(type);
     console.log(review);
 
-    if (makeModel == '') {
+    if (makeModel == "") {
       alert('Please add Make/Model before continuing')
-    } if (type == '') {
+    }else if (type == "") {
       alert('Please add Type before continuing')
-    } if (year == '') {
+    }else if (year == "") {
       alert('Please add Year before continuing')
-    } if (review == '') {
+    }else if (review == "") {
       alert('Please add Review before continuing')
     }
     else {
