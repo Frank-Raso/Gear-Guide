@@ -82,7 +82,6 @@ function AddReview() {
 
     }
     handleSubmitFile(event);
-    history.push('/profile')
   }
  let age;
   const handleFileInputChange = (e) => {
