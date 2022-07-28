@@ -18,61 +18,62 @@ function Gear() {
         dispatch({ type: 'GEAR_CONT', payload: id });
     }, []);
 
-    const delete_Gear = () => {
+    const delete_Gear = async () => {
         if (window.confirm('Are you sure you want to delete this gear?')) {
             dispatch({ type: 'DELETE_GEAR', payload: id });
-            history.push('/');
-        }}
+            await history.push('/');
+        }
+    }
 
-        // const delete_Gear = async () => {
-        //     try{
-        //     dispatch({ type: 'DELETE_GEAR', payload: id });
-        //     await history.push('/');
-        //     } catch (error) {
-        //         console.log(error);
-        //     }
-        // }
-const editGear = () => {
-    console.log('/In edit')
-    history.push(`/edit/${id}`);
-}
+    // const delete_Gear = async () => {
+    //     try{
+    //     dispatch({ type: 'DELETE_GEAR', payload: id });
+    //     await history.push('/');
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
+    const editGear = () => {
+        console.log('/In edit')
+        history.push(`/edit/${id}`);
+    }
 
     const upDel = () => {
-            console.log('upDel');
-            if (user.id === gear[0].user_id) {
-                console.log('true');
-                return (
-                    <div>
-                        <Button variant="contained" color="primary" onClick={delete_Gear}>Delete</Button>
-                        <Button variant="contained" color="primary" onClick={editGear}>Edit</Button>
-                    </div>
-                );
-            }
-
+        console.log('upDel');
+        if (user.id === gear[0].user_id) {
+            console.log('true');
+            return (
+                <div>
+                    <Button variant="contained" color="primary" onClick={delete_Gear}>Delete</Button>
+                    <Button variant="contained" color="primary" onClick={editGear}>Edit</Button>
+                </div>
+            );
         }
 
+    }
 
-        return (
-            <div className='gear_page' >
 
-                {gear.length === 0 ?
+    return (
+        <div className='gear_page' >
+            {gear.length === 0 ?
 
-                    <h1 className='spinner'></h1> :
-                    <div className='card' >
-                        {/* <Avatar 
+                <h1 className='spinner'></h1> :
+                <div className='card' >
+                    {/* <Avatar src={gear[0].image}></Avatar> */}
+                    {/* <Avatar 
                     onClick={'goes to users profile (stretch_goal)'} >{user.username[0]}</Avatar> */}
 
-                        <h2>{gear[0].title}</h2>
-                        <h3>{gear[0].year}</h3>
-                        <img className='gearImg' src={gear[0].image} alt="" />
-                        {/* <p>{gear[0].type_id}</p> */}
-                        <p>{gear[0].review}</p>
-                        <div>{upDel()}</div>
+                    <h2>{gear[0].title}</h2>
+                    <h3>{gear[0].year}</h3>
+                    <img className='gearImg' src={gear[0].image} alt="" />
+                    {/* <p>{gear[0].type_id}</p> */}
+                    <p>{gear[0].review}</p>
+                    <div>{upDel()}</div>
 
-                    </div>
-                }
+                </div>
+            }
 
-            </div>
-        );
-    }
-    export default Gear;
+        </div>
+    );
+}
+export default Gear;
