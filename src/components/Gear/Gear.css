@@ -54,7 +54,12 @@
 }
 
 .gearImg:hover {
-    transform: scale(1.1);
-    transition: all .7s ease;
+    transform: scale(1.02);
+    transition: all .4s ease;
+    cursor: pointer;
+}
+.gearImg:active {
+    transform: scale(2.2);
+    transition: all .4s ease;
     cursor: pointer;
 }

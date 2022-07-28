@@ -16,7 +16,7 @@ div{
 }
 .AmpImg:hover{
     transform: scale(1.1);
-    transition: all .1s ease;
+    transition: all .3s ease;
     cursor: pointer;
 
 }
