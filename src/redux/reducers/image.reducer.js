@@ -1,12 +1,13 @@
-import { combineReducers } from 'redux';
 
-
-const imageRed = (state = [], action) => {
+const imageReducer = (state = [], action) => {
     switch (action.type) {
-        case 'SET_IMAGE':
-            return action.payload;
-        default:
-            return state;
+      case 'SET_IMAGE':
+        return action.payload;
+      case 'CLEAR_IMAGE':
+        return state = [];
+      default:
+        return state;
     }
-}
-export default imageRed;
+  };
+  
+  export default imageReducer;

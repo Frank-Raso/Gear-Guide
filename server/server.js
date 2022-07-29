@@ -16,7 +16,10 @@ const getAmpsRouter = require('./routes/getAmps.router.js');
 const getGuitarsRouter = require('./routes/getGuitars.router.js');
 const getAccessoriesRouter = require('./routes/getAccessories.router.js');
 const editGearRouter = require('./routes/editGear.router.js');
+const uploadImageRouter = require('./routes/uploadImage.router.js');
+
 // Body parser middleware
+
 // app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json({ limit: '50mb' }));
@@ -37,6 +40,7 @@ app.use('/api/amps', getAmpsRouter);
 app.use('/api/guitars', getGuitarsRouter);
 app.use('/api/accessories', getAccessoriesRouter);
 app.use('/api/edit', editGearRouter);
+app.use('/api/uploadImage', uploadImageRouter);
 
 
 app.get('/api/images', async (req, res) => {
@@ -52,25 +56,6 @@ app.get('/api/images', async (req, res) => {
 });
 
 
-
-
-app.post('/api/upload', async (req, res) => {
-  try {
-    const fileStr = req.body.data;
-    const uploadedResponse = await cloudinary.uploader.upload(fileStr, {
-      upload_preset: 'ml_default',
-    });
-    console.log(uploadedResponse);
-    console.log('hello Georgie',uploadedResponse.url);
-    res.send({ msg: "Success", data: uploadedResponse });
-  } catch (err) {
-    console.log(err)
-    res.status(500).send({ err: 'something went wrong', data: err });
-  }
-});
-
-
-
 // Serve static files
 app.use(express.static('build'));
 
@@ -81,4 +66,3 @@ const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
 });
-
