@@ -10,6 +10,7 @@ import { TextField } from '@material-ui/core';
 import { MenuItem } from '@material-ui/core';
 import { FormControl, Select } from '@material-ui/core';
 import {InputLabel} from '@material-ui/core';
+import {Button} from '@material-ui/core';
 
 
 function Edit() {
@@ -111,7 +112,7 @@ function Edit() {
         <h1>Edit Gear:</h1>
 
         <input type="file" name='image' onChange={handleFileInputChange} />
-        <button onClick={uploadImage} >Upload File</button>
+        <Button  color='primary' variant='contained' onClick={uploadImage} >Upload File</Button>
 
 
 
@@ -132,7 +133,7 @@ function Edit() {
         {/* <TextField className='textfield' type="text" onChange={reviewIn} id="outlined-basic" label="Review" variant="outlined" /> */}
 
 
-        <button className='btn' onClick={setGear} >Submit</button>
+        <Button variant='contained' color="primary" className='btn' onClick={setGear} >Submit</Button>
 
       {previewSource && (<img src={previewSource} alt="chosen" style={{ height: '300px' }} />)}
     </div>

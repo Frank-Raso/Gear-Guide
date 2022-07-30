@@ -31,6 +31,7 @@ function AboutPage() {
       <h4>Welcome to the Gear Guide!</h4>
         <p className='aboutText' >The Gear Guide was created for musicians and gear heads to come together and build upon the knowlege base of the industry, and to help upcoming musicians find the gear they love! </p>
       <div>
+        <br />
 
         {imageIDs && imageIDs.map((imageId, index) => (
           <Image

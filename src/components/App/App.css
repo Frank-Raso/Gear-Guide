@@ -2,20 +2,22 @@ html,
 body,
 #react-root {
   height: 100%;
-  background-color: rgb(52, 52, 52);
+  background-color: rgb(23, 23, 23);
   /* background-color: rgb(0, 0, 0); */
 
   color:rgb(164, 163, 160)
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+
   margin: 0px;
 }
 
 img {
-  display: inline-block;
-  max-width: 100%;
+  /* display: inline-block; */
+  /* max-width: 100%; */
   filter: drop-shadow(  0px 0px 20px rgb(0, 0, 0) );
   /* filter: drop-shadow(  0px 0px 20px rgb(219, 154, 35) ); */
   /* filter: drop-shadow(  0px 0px 15px rgb(137, 136, 136) ); */
@@ -112,7 +114,6 @@ Form Treatment
   padding: 25px;
   margin: 0 auto 20px;
   background-color: #171a29;
-
   border-radius: 3px;
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
 }
@@ -120,6 +121,7 @@ Form Treatment
 input {
   margin: 5px;
   margin-bottom: 10px;
+
 }
 div{
     text-align: center;

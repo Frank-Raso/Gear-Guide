@@ -9,7 +9,7 @@ import { TextField } from '@material-ui/core';
 import { MenuItem } from '@material-ui/core';
 import { FormControl, Select } from '@material-ui/core';
 import { InputLabel } from '@material-ui/core';
-import {Input} from '@material-ui/core';
+import { Input } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 
 
@@ -56,45 +56,45 @@ function AddReview() {
     setType(event.target.value)
     console.log(type);
   }
- 
+
 
   const setGear = () => {
 
 
-      console.log(makeModel);
-      console.log(year);
-      console.log(type);
-      console.log(userImage);
-      console.log(review);
-  
-      if (makeModel == "") {
-        alert('Please add Make/Model before continuing')
-      } else if (type == "") {
-        alert('Please add Type before continuing')
-      } else if (year == "") {
-        alert('Please add Year before continuing')
-      } else if (review == "") {
-        alert('Please add Review before continuing')
-      }
-      else {
-  
-        let gearPost = {
-          title: makeModel,
-          type_id: type,
-          year: year,
-          review: review,
-          image: userImage,
-          user_id: user.id,
-        };
-        axios.post('/api/AddGear', gearPost).then((response) => {
-          console.log(response.data);
-          history.push('/profile')
-  
-        }).catch((err) => {
-          console.log(err);
-          alert('err posting fbp');
-        })
-      }
+    console.log(makeModel);
+    console.log(year);
+    console.log(type);
+    console.log(userImage);
+    console.log(review);
+
+    if (makeModel == "") {
+      alert('Please add Make/Model before continuing')
+    } else if (type == "") {
+      alert('Please add Type before continuing')
+    } else if (year == "") {
+      alert('Please add Year before continuing')
+    } else if (review == "") {
+      alert('Please add Review before continuing')
+    }
+    else {
+
+      let gearPost = {
+        title: makeModel,
+        type_id: type,
+        year: year,
+        review: review,
+        image: userImage,
+        user_id: user.id,
+      };
+      axios.post('/api/AddGear', gearPost).then((response) => {
+        console.log(response.data);
+        history.push('/profile')
+
+      }).catch((err) => {
+        console.log(err);
+        alert('err posting fbp');
+      })
+    }
   }
 
   const handleFileInputChange = (e) => {
@@ -110,36 +110,38 @@ function AddReview() {
       setPreviewSource(reader.result);
     }
   };
-  
-  
+
+
   return (
     <div className="container">
-
         <h1>Add Gear:</h1>
+        <br />
+      <div>
+        <br />
+      </div>
+      <input color='primary' variant='contained' type="file" name='image' onChange={handleFileInputChange} />
+        <Button color='primary' variant='contained' onClick={uploadImage} >Upload File</Button>
 
-        <input type="file" name='image' onChange={handleFileInputChange} />
-        <button onClick={uploadImage} >Upload File</button>
+      <input type="text" placeholder='Gear Make/Model' onChange={makeIn} />
+      {/* <TextField className='textfield'  type="text" onChange={makeIn} id="outlined-basic" label="Gear make/model" variant="outlined" /> */}
 
-        <input type="text" placeholder='Gear Make/Model' onChange={makeIn} />
-        {/* <TextField className='textfield'  type="text" onChange={makeIn} id="outlined-basic" label="Gear make/model" variant="outlined" /> */}
+      <select onChange={typeIn} >
+        <option value="" selected disabled hidden>Gear Type</option>
+        <option value="Guitar">Guitar</option>
+        <option value="Amp">Amp</option>
+        <option value="Accessory">Accessory</option>
+      </select>
 
-        <select onChange={typeIn} >
-          <option value="" selected disabled hidden>Gear Type</option>
-          <option value="Guitar">Guitar</option>
-          <option value="Amp">Amp</option>
-          <option value="Accessory">Accessory</option>
-        </select>
+      <input type="text" placeholder='Year' onChange={yearIn} />
+      {/* <TextField className='textfield' type="text" onChange={yearIn} id="outlined-basic" label="Year" variant="outlined" /> */}
 
-        <input type="text" placeholder='Year' onChange={yearIn} />
-        {/* <TextField className='textfield' type="text" onChange={yearIn} id="outlined-basic" label="Year" variant="outlined" /> */}
-
-        <input type="text" placeholder='Review' onChange={reviewIn} />
-        {/* <TextField className='textfield' type="text" onChange={reviewIn} id="outlined-basic" label="Review" variant="outlined" /> */}
+      <input type="text" placeholder='Review' onChange={reviewIn} />
+      {/* <TextField className='textfield' type="text" onChange={reviewIn} id="outlined-basic" label="Review" variant="outlined" /> */}
 
 
 
 
-        <button className='btn' onClick={setGear} >Submit</button>
+      <Button variant='contained' color="primary" className='btn' onClick={setGear} >Submit</Button>
 
       {previewSource && (<img src={previewSource} alt="chosen" style={{ height: '300px' }} />)}
     </div>

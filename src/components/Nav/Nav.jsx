@@ -6,21 +6,23 @@ import { useSelector } from 'react-redux';
 
 function Nav() {
   const user = useSelector((store) => store.user);
-
+  
   return (
     <div className="nav">
       <Link to="/home">
-        <h2 className="nav-title">The Gear Guide</h2>
+        <img className='ico' src="favicon.ico" alt="" />
+        <p className="nav-title">Gear Guide</p>
+
       </Link>
       <div>
         {/* If no user is logged in, show these links */}
         {!user.id && (
           // If there's no user, show login/registration links
           <>
-          <Link className="navLink" to="/login">
-            Login / Register
-          </Link>
-          <Link className="navLink" to="/about">
+            <Link className="navLink" to="/login">
+              Login / Register
+            </Link>
+            <Link className="navLink" to="/about">
               About
             </Link>
           </>

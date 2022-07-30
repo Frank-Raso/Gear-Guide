@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './UserPage.css';
 import { Avatar } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 
 function UserPage() {
     const history = useHistory();
@@ -19,6 +20,9 @@ function UserPage() {
 
     const gearR = (id) => {
         history.push(`/gear/${id}`)
+    }
+    const routeAddGear = () => {
+        history.push('/addgear')
     }
 
     return (
@@ -47,7 +51,14 @@ function UserPage() {
                         </div>
                     );
                 })}
+
             </div>
+            <br />
+            <br />
+            <br />
+            <br />
+      <Button variant='contained' color="primary" className='routeButton' onClick={routeAddGear}  >Add Gear</Button>
+
         </div>
     );
 }
