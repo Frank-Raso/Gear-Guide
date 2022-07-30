@@ -21,7 +21,10 @@ function Gear() {
     const delete_Gear = async () => {
         if (window.confirm('Are you sure you want to delete this gear?')) {
             dispatch({ type: 'DELETE_GEAR', payload: id });
-            await history.push('/');
+            setTimeout(function(){
+                 history.push('/');
+            }, 1);
+           
         }
     }
 

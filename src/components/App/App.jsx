@@ -19,7 +19,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import AddReview from '../AddReview/AddReview';
+import AddGear from '../AddGear/AddGear';
 import All_Gear from '../All_Gear/All_Gear';
 import Guitars from '../Guitars/Guitars';
 import Amps from '../Amps/Amps';
@@ -96,7 +96,7 @@ function App() {
             path="/addGear"
           >
             {/* <InfoPage /> */}
-            <AddReview/>
+            <AddGear/>
           </ProtectedRoute>
 
           <ProtectedRoute

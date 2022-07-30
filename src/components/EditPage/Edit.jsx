@@ -15,10 +15,8 @@ import {InputLabel} from '@material-ui/core';
 function Edit() {
   const dispatch = useDispatch();
   const history = useHistory();
-
+  const userImage = useSelector(store => store.imageReducer);
   const user = useSelector((store) => store.user);
-  const [fileInputState, setFileInputState] = useState('');
-  const [selectedFile, setSelectedFile] = useState('');
   const [previewSource, setPreviewSource] = useState();
 
   const [makeModel, setMakeModel] = useState('');
@@ -27,6 +25,14 @@ function Edit() {
   const [review, setReview] = useState('');
   const [img, setImg] = useState('');
   let { id } = useParams();
+
+  const uploadImage = () => {
+    console.log('TESTING UPLOAD IMAGE', img);
+    let imageToSend = new FormData();
+    imageToSend.append('file', img);
+    console.log(imageToSend);
+    dispatch({ type: 'SEND_IMAGE', payload: imageToSend });
+  }
 
   const makeIn = () => {
     console.log('in makeIn:')
@@ -71,19 +77,23 @@ function Edit() {
         year: year,
         review: review,
         user_id: user.id,
+        image: userImage,
         id:id,
       };
         console.log(gearPost);
         dispatch({ type: 'EDIT_GEAR', payload: gearPost });
-        history.push('/profile')
+        setTimeout(function(){
+          history.push('/profile');
+     }, 1);
     }
-    handleSubmitFile(event);
   }
 
   const handleFileInputChange = (e) => {
     const file = e.target.files[0];
     previewFile(file);
+    setImg(file);
   };
+
   const previewFile = (file) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
@@ -91,31 +101,20 @@ function Edit() {
       setPreviewSource(reader.result);
     }
   };
-  const handleSubmitFile = (e) => {
-    console.log('submitting file');
-    e.preventDefault();
-    if (!previewSource) return;
-    uploadImage(previewSource)
-  }
-  const uploadImage = async (base64EncodedImage) => {
-
-    try {
-      await fetch('/api/upload', {
-        method: 'POST',
-        body: JSON.stringify({ data: base64EncodedImage }),
-        headers: { 'Content-Type': 'application/json' }
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
+ 
   return (
     <div className="container">
 
-      <form className="form">
+
 
         <p>Edit your review here</p>
         <h1>Edit Gear:</h1>
+
+        <input type="file" name='image' onChange={handleFileInputChange} />
+        <button onClick={uploadImage} >Upload File</button>
+
+
+
         <input type="text" placeholder='Gear Make/Model' onChange={makeIn} />
         {/* <TextField className='textfield'  type="text" onChange={makeIn} id="outlined-basic" label="Gear make/model" variant="outlined" /> */}
 
@@ -133,10 +132,8 @@ function Edit() {
         {/* <TextField className='textfield' type="text" onChange={reviewIn} id="outlined-basic" label="Review" variant="outlined" /> */}
 
 
-        <input type="file" name='image' onChange={handleFileInputChange} value={fileInputState}
-          className={"form-input"} />
         <button className='btn' onClick={setGear} >Submit</button>
-      </form>
+
       {previewSource && (<img src={previewSource} alt="chosen" style={{ height: '300px' }} />)}
     </div>
   );

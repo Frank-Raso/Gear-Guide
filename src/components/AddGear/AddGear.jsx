@@ -2,13 +2,15 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import axios from 'axios';
-import './AddReview.css';
+import './AddGear.css';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
 import { TextField } from '@material-ui/core';
 import { MenuItem } from '@material-ui/core';
 import { FormControl, Select } from '@material-ui/core';
 import { InputLabel } from '@material-ui/core';
+import {Input} from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 
 
 
@@ -58,7 +60,7 @@ function AddReview() {
 
   const setGear = () => {
 
-      console.log("Executed after 4 seconds");
+
       console.log(makeModel);
       console.log(year);
       console.log(type);
@@ -109,12 +111,14 @@ function AddReview() {
     }
   };
   
-
+  
   return (
     <div className="container">
 
         <h1>Add Gear:</h1>
 
+        <input type="file" name='image' onChange={handleFileInputChange} />
+        <button onClick={uploadImage} >Upload File</button>
 
         <input type="text" placeholder='Gear Make/Model' onChange={makeIn} />
         {/* <TextField className='textfield'  type="text" onChange={makeIn} id="outlined-basic" label="Gear make/model" variant="outlined" /> */}
@@ -132,9 +136,8 @@ function AddReview() {
         <input type="text" placeholder='Review' onChange={reviewIn} />
         {/* <TextField className='textfield' type="text" onChange={reviewIn} id="outlined-basic" label="Review" variant="outlined" /> */}
 
-        <input type="file" name='image' onChange={handleFileInputChange} />
 
-        <button onClick={uploadImage} >Upload File</button>
+
 
         <button className='btn' onClick={setGear} >Submit</button>
 
