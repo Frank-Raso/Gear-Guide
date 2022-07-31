@@ -150,7 +150,7 @@ function AddReview() {
         onChange={reviewIn}
         label="Review"
         multiline
-        minRows={8}
+        minRows={6}
         variant="standard" />
       <br />
       <Button variant='contained' color="primary" className='btn' onClick={setGear} >Submit</Button>
