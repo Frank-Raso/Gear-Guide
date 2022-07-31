@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
 import { TextField } from '@material-ui/core';
 import { MenuItem } from '@material-ui/core';
-import { FormControl, Select } from '@material-ui/core';
+import { FormControl, Select, makeStyles } from '@material-ui/core';
 import { InputLabel } from '@material-ui/core';
 import { Input } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
@@ -15,7 +15,11 @@ import { TextareaAutosize } from '@material-ui/core';
 import { OutlinedInput } from '@material-ui/core';
 
 
-
+const useStyles = makeStyles(theme => ({
+  formControl: {
+    minWidth: 160,
+  }
+}));
 
 function AddReview() {
 
@@ -29,7 +33,10 @@ function AddReview() {
   const [type, setType] = useState('');
   const [review, setReview] = useState('');
   const [img, setImg] = useState('');
-
+  const [value, setValue] = useState('');
+  
+  const classes = useStyles();
+  
   const uploadImage = () => {
     console.log('TESTING UPLOAD IMAGE', img);
     let imageToSend = new FormData();
@@ -37,8 +44,9 @@ function AddReview() {
     console.log(imageToSend);
     dispatch({ type: 'SEND_IMAGE', payload: imageToSend });
   }
-
-
+  
+  
+  const handleValueChange = (event) => setValue(event.target.value);
   const makeIn = () => {
     console.log('in makeIn:')
     setMakeModel(event.target.value)
@@ -66,13 +74,13 @@ function AddReview() {
 
     console.log(makeModel);
     console.log(year);
-    console.log(type);
+    console.log(value);
     console.log(userImage);
     console.log(review);
 
     if (makeModel == "") {
       alert('Please add Make/Model before continuing')
-    } else if (type == "") {
+    } else if (value == "") {
       alert('Please add Type before continuing')
     } else if (year == "") {
       alert('Please add Year before continuing')
@@ -83,7 +91,7 @@ function AddReview() {
 
       let gearPost = {
         title: makeModel,
-        type_id: type,
+        type_id: value,
         year: year,
         review: review,
         image: userImage,
@@ -121,7 +129,7 @@ function AddReview() {
       <div>
         <br />
         <span className='previewImg'>
-        {previewSource && (<img src={previewSource} alt="chosen" style={{ height: '200px' }} />)}
+          {previewSource && (<img src={previewSource} alt="chosen" style={{ height: '200px' }} />)}
         </span>
       </div>
       <Input color='primary' variant='contained' type="file" name='image' onChange={handleFileInputChange} />
@@ -130,17 +138,22 @@ function AddReview() {
       <Button color='primary' variant='contained' onClick={uploadImage} >Upload File</Button>
       <br />
       <br />
-      <TextField className='textfield' type="text" onChange={makeIn}  label="Gear make/model" variant="standard" />
+      <TextField className='textfield' type="text" onChange={makeIn} label=" Make-Model" variant="standard" />
       <br />
       <br />
-      <select onChange={typeIn} >
-        <option value=""selected disabled hidden>Gear Type</option>
-        <option value="Guitar">Guitar</option>
-        <option value="Amp">Amp</option>
-        <option value="Accessory">Accessory</option>
-      </select>
 
+      <FormControl className={classes.formControl} >
+        <InputLabel
 
+        > Gear Type </InputLabel>
+        <Select onChange={handleValueChange} >
+          <MenuItem value='Guitar'>Guitar</MenuItem>
+          <MenuItem value='Amp'>Amp</MenuItem>
+          <MenuItem value='Accessory'>Accessory</MenuItem>
+        </Select>
+      </FormControl> 
+      <br />
+      <br />
       <br />
       <TextField className='textfield' type="text" onChange={yearIn} label="Year" variant="standard" />
       <br />

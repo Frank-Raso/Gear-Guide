@@ -45,7 +45,7 @@ function AboutPage() {
       <div>
         <br />
 
-        {imageIDs && imageIDs.map((imageId, index) => (
+        {/* {imageIDs && imageIDs.map((imageId, index) => (
           <Image
             className="image"
             key={index}
@@ -53,7 +53,7 @@ function AboutPage() {
             publicId={imageId}
             width="200"
             crop="scale"
-          />))}
+          />))} */}
       </div>
 
       <h4>About the Creator:</h4>
