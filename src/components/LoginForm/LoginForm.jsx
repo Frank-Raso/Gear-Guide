@@ -29,7 +29,7 @@ function LoginForm() {
 
   return (
     <form className="formPanel" onSubmit={login}>
-      {/* <h2>Login</h2> */}
+
       <img className='ico' src="favicon.ico" alt="" />
       {errors.loginMessage && (
         <h3 className="alert" role="alert">

@@ -30,15 +30,12 @@ function All_Gear() {
                     return (
                         <div key={eachGear.id} >
                             <div>
-                                {/* <Avatar
-                                    onClick={() => gearR(eachGear.id)}
-                                    src={eachGear.image}></Avatar> */}
 
                                     <img className='AllImg' onClick={() => gearR(eachGear.id)}
                                     src={eachGear.image} ></img>
 
                                 <h3 onClick={() => gearR(eachGear.id)} className='AllCatalogTitle' >{eachGear.year}  :  {eachGear.title}</h3>
-                                {/* <p className='catalogDescription'>{eachGear.year}</p> */}
+
                             </div>
                         </div>
 

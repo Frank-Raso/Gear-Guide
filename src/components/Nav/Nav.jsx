@@ -64,9 +64,7 @@ function Nav() {
             </Link>
 
             <LogOutButton className="navLink" />
-            {/* <Avatar className='avatar'
-            >{user.username[0]}
-            </Avatar> */}
+
           </>
         )}
       </div>

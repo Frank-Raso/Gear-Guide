@@ -13,6 +13,7 @@ function Gear() {
     const gear = useSelector((store) => store.eachGear);
     let { id } = useParams();
 
+
     useEffect(() => {
         console.log(id);
         dispatch({ type: 'GEAR_CONT', payload: id });
@@ -29,7 +30,7 @@ function Gear() {
     }
     const minusOne = () => {
         let Mid;
-        Mid =Number(id) - 1;
+        Mid = Number(id) - 1;
         history.push(`/gear/${Mid}`);
     }
     const plusOne = () => {
@@ -58,28 +59,23 @@ function Gear() {
 
 
     return (
-
         <div className='gear_page' >
-            
+
             {gear.length === 0 ?
 
                 <h1 className='spinner'></h1> :
                 <div className='card' >
-                    {/* <Avatar src={gear[0].image}></Avatar> */}
-                    {/* <Avatar 
-                    onClick={'goes to users profile (stretch_goal)'} >{user.username[0]}</Avatar> */}
 
+                    <img className='arrowL' src="left-arrow.png" onClick={minusOne} />
+                    <img className='arrowR' src="right-arrow.png" onClick={plusOne} />
                     <h2>{gear[0].title}</h2>
                     <h3>{gear[0].year}</h3>
                     <img className='gearImg' src={gear[0].image} alt="" />
-                    {/* <p>{gear[0].type_id}</p> */}
                     <p>{gear[0].review}</p>
                     <div>{upDel()}</div>
-                    <button onClick={minusOne} >Previous</button>
-                    <button onClick={plusOne} >Next</button>
+
                 </div>
             }
-
         </div>
     );
 }

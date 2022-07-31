@@ -50,6 +50,7 @@ function App() {
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/profile */}
           <Redirect exact from="/" to="/profile" />
+          <Redirect exact from="/gear/0" to="/profile" />
 
           {/* Visiting localhost:3000/about will show the about page. */}
           <Route

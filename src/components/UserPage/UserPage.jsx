@@ -49,40 +49,17 @@ function UserPage() {
             </Avatar>
             <p>Welcome {user.username}!</p>
 
-
-            {/* <Avatar className="avatar"
-            >{user.username[0]}
-            </Avatar>
-            <p className="avatar" >Welcome {user.username} !</p>
-            <br />
-
-            <p className="avatar"  >Categories:</p>
-            <br />
-            <p className="avatar" onClick={routeAllGear}>All Gear</p>
-            <br />
-            <p className="avatar" onClick={routeGuitars}>Guitars</p>
-            <br />
-
-            <p className="avatar" onClick={routeAmps}>Amps</p>
-            <br />
-
-            <p className="avatar" onClick={routeAccessories}>Accessories</p>
-            <br />
-
-            <p className="avatar" onClick={routeAddGear}>Add Gear</p> */}
             <div className='GearList'>
                 {gear.map(eachGear => {
                     return (
                         <div className='GearItem' key={eachGear.id} >
                             <div className='catalog'>
-                                {/* <Avatar variant='rounded' onClick={() => gearR(eachGear.id)} src={eachGear.image}
-                                /> */}
+
                                 <img className='GearImg' onClick={() => gearR(eachGear.id)}
                                     src={eachGear.image} ></img>
 
                                 <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.title}</h3>
 
-                                {/* <h5>{eachGear.year}</h5> */}
                             </div>
                         </div>
                     );

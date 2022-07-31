@@ -22,7 +22,7 @@ function RegisterForm() {
 
   return (
     <form className="formPanel" onSubmit={registerUser}>
-      {/* <h2>Become a Member</h2> */}
+
       <img className='ico' src="favicon.ico" alt="" />
       {errors.registrationMessage && (
         <h3 className="alert" role="alert">

@@ -27,14 +27,12 @@ function Amps() {
                         return (
                             <div key={eachGear.id} >
                                 <div>
-                                    {/* <Avatar src={eachGear.image}
-                                        onClick={() => gearR(eachGear.id)}
-                                    ></Avatar> */}
+
                                     <img className='AmpImg' onClick={() => gearR(eachGear.id)}
                                     src={eachGear.image} ></img>
 
                                     <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.year}  :  {eachGear.title}</h3>
-                                    {/* <p className='catalogDescription'>{eachGear.year}</p> */}
+
                                 </div>
                             </div>
                         );
