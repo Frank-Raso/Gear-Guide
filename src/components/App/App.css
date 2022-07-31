@@ -4,13 +4,16 @@ body,
   height: 100%;
   background-color: rgb(23, 23, 23);
   /* background-color: rgb(0, 0, 0); */
+  background-image: url('/src/components/1.jpeg');
+  /* color:rgb(164, 163, 160); */
+  color:rgba(255, 255, 255, 0.87);
 
-  color:rgb(164, 163, 160)
 }
 
 body {
   /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+
 
   margin: 0px;
 }
@@ -18,11 +21,9 @@ body {
 img {
   /* display: inline-block; */
   /* max-width: 100%; */
-  filter: drop-shadow(  0px 0px 20px rgb(0, 0, 0) );
+  filter: drop-shadow(  0px 0px 15px rgb(0, 0, 0) );
   /* filter: drop-shadow(  0px 0px 20px rgb(219, 154, 35) ); */
-  /* filter: drop-shadow(  0px 0px 15px rgb(137, 136, 136) ); */
-
-
+  /* filter: drop-shadow(  0px 0px 15px rgb(194, 193, 193) ); */
 }
 
 /* --------------------------------------------------------------------------------
@@ -111,11 +112,13 @@ Form Treatment
   box-sizing: border-box;
   width: 400px;
   max-width: 100%;
-  padding: 25px;
-  margin: 0 auto 20px;
-  background-color: #171a29;
-  border-radius: 3px;
+  padding: 30px;
+  margin: 0 auto 30px;
+  backdrop-filter: blur(1px);
+  background-color: rgba(255, 255, 255, 0.364);
+  border-radius: 15px;
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
+  color: #efefef;
 }
 
 input {

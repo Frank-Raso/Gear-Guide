@@ -28,14 +28,6 @@ function Gear() {
         }
     }
 
-    // const delete_Gear = async () => {
-    //     try{
-    //     dispatch({ type: 'DELETE_GEAR', payload: id });
-    //     await history.push('/');
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
     const editGear = () => {
         console.log('/In edit')
         history.push(`/edit/${id}`);

@@ -20,7 +20,7 @@ function Accessories() {
 
     return (
         <div className='container' >
-            <h2>Accessories</h2>
+            <h2>- Accessories -</h2>
                 <div className="AccessoryList" >
                     {gear.map(eachGear => {
                         return (

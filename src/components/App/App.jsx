@@ -30,8 +30,8 @@ import Edit from '../EditPage/Edit';
 
 
 
-
 import './App.css';
+import SideBar from '../SideBar/SideBar';
 
 function App() {
   const dispatch = useDispatch();
@@ -46,6 +46,7 @@ function App() {
     <Router>
       <div>
         <Nav />
+        <SideBar />
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/profile */}
           <Redirect exact from="/" to="/profile" />

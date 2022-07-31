@@ -21,7 +21,7 @@ function Amps() {
 
     return (
         <div className='container' >
-            <h2>Amps</h2>
+            <h2>- Amps -</h2>
                 <div className="AmpList" >
                     {gear.map(eachGear => {
                         return (

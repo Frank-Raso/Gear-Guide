@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {useSelector} from 'react-redux';
-
+import { useSelector } from 'react-redux';
+import { Input } from '@material-ui/core';
+import { Button } from '@material-ui/core';
+import { TextField } from '@material-ui/core';
 function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const errors = useSelector(store => store.errors);
   const dispatch = useDispatch();
+
 
   const login = (event) => {
     event.preventDefault();
@@ -26,7 +29,8 @@ function LoginForm() {
 
   return (
     <form className="formPanel" onSubmit={login}>
-      <h2>Login</h2>
+      {/* <h2>Login</h2> */}
+      <img className='ico' src="favicon.ico" alt="" />
       {errors.loginMessage && (
         <h3 className="alert" role="alert">
           {errors.loginMessage}
@@ -34,8 +38,11 @@ function LoginForm() {
       )}
       <div>
         <label htmlFor="username">
-          Username:
-          <input
+          <TextField
+            variant='standard'
+            margin="normal"
+            label="Username"
+            id='outlined-basic'
             type="text"
             name="username"
             required
@@ -45,9 +52,13 @@ function LoginForm() {
         </label>
       </div>
       <div>
+
         <label htmlFor="password">
-          Password:
-          <input
+          <TextField
+            variant='standard'
+            margin="normal"
+            label='Password'
+            id='outlined-basic'
             type="password"
             name="password"
             required
@@ -57,7 +68,9 @@ function LoginForm() {
         </label>
       </div>
       <div>
-        <input className="btn" type="submit" name="submit" value="Log In" />
+      <br />
+        <Button variant="contained" color="primary" className="btn" type="submit" name="submit" value="Log In" >Login</Button>
+
       </div>
     </form>
   );

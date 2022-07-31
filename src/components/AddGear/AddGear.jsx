@@ -114,7 +114,7 @@ function AddReview() {
 
   return (
     <div className="container">
-        <h1>Add Gear:</h1>
+        <h2>- Add Gear -</h2>
         <br />
       <div>
         <br />

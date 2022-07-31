@@ -22,7 +22,9 @@ function All_Gear() {
     return (
 
         <div className='container'  >
-            <h2>All Gear</h2>
+            <h2>- All Gear -</h2>
+                
+
             <div className="AllGearList">
                 {gear.map(eachGear => {
                     return (

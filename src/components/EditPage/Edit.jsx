@@ -106,10 +106,9 @@ function Edit() {
   return (
     <div className="container">
 
-
-
-        <p>Edit your review here</p>
-        <h1>Edit Gear:</h1>
+        <h2>- Edit Gear -</h2>
+        <br />
+        <br />
 
         <input type="file" name='image' onChange={handleFileInputChange} />
         <Button  color='primary' variant='contained' onClick={uploadImage} >Upload File</Button>

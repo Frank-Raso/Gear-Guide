@@ -8,6 +8,9 @@ div{
     grid-template-columns: repeat(4, 1fr);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: auto;
+    margin-top: 4%;
+    margin-left:15% ;
+
 }
 .AccessoryImg{
     height: 200px;

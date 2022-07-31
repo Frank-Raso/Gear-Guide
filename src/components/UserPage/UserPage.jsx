@@ -13,10 +13,25 @@ function UserPage() {
     const gear = useSelector((store) => store.profileGear);
     const user = useSelector((store) => store.user);
 
+
+
     useEffect(() => {
         dispatch({ type: 'FETCH_GEAR' });
         dispatch({ type: 'FETCH_GEAR' });
     }, []);
+
+    const routeAllGear = () => {
+        history.push('/all');
+    };
+    const routeGuitars = () => {
+        history.push('/guitars');
+    };
+    const routeAmps = () => {
+        history.push('/amps');
+    };
+    const routeAccessories = () => {
+        history.push('/accessories');
+    };
 
     const gearR = (id) => {
         history.push(`/gear/${id}`)
@@ -27,12 +42,34 @@ function UserPage() {
 
     return (
         <div className="container">
-            <Avatar
+
+
+            <Avatar className='avatar'
             >{user.username[0]}
             </Avatar>
-            <p>Welcome, {user.username}!</p>
-            {/* <p>{user.id}</p> */}
-            <p>Your Gear:</p>
+            <p>Welcome {user.username}!</p>
+
+
+            {/* <Avatar className="avatar"
+            >{user.username[0]}
+            </Avatar>
+            <p className="avatar" >Welcome {user.username} !</p>
+            <br />
+
+            <p className="avatar"  >Categories:</p>
+            <br />
+            <p className="avatar" onClick={routeAllGear}>All Gear</p>
+            <br />
+            <p className="avatar" onClick={routeGuitars}>Guitars</p>
+            <br />
+
+            <p className="avatar" onClick={routeAmps}>Amps</p>
+            <br />
+
+            <p className="avatar" onClick={routeAccessories}>Accessories</p>
+            <br />
+
+            <p className="avatar" onClick={routeAddGear}>Add Gear</p> */}
             <div className='GearList'>
                 {gear.map(eachGear => {
                     return (
@@ -42,7 +79,6 @@ function UserPage() {
                                 /> */}
                                 <img className='GearImg' onClick={() => gearR(eachGear.id)}
                                     src={eachGear.image} ></img>
-
 
                                 <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.title}</h3>
 
@@ -57,7 +93,7 @@ function UserPage() {
             <br />
             <br />
             <br />
-      <Button variant='contained' color="primary" className='routeButton' onClick={routeAddGear}  >Add Gear</Button>
+            <Button variant='contained' color="primary" className='routeButton' onClick={routeAddGear}  >Add Gear</Button>
 
         </div>
     );
