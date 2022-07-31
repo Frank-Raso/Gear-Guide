@@ -70,7 +70,7 @@ function UserPage() {
             <br />
             <br />
             <br />
-            <Button variant='contained' color="primary" className='routeButton' onClick={routeAddGear}  >Add Gear</Button>
+
 
         </div>
     );
