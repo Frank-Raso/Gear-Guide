@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { Image } from 'cloudinary-react';
 import { Link } from 'react-router-dom';
 import * as BsIcons from "react-icons/bs";
+import * as FaIcons from "react-icons/fa";
 
 import './AboutPage.css';
 // This is one of our simplest components
@@ -15,8 +16,11 @@ import './AboutPage.css';
 
 function AboutPage() {
   const [imageIDs, setImageIDs] = useState();
-  const gogo = () => {
+  const gogit = () => {
     window.location = "https://github.com/Lux302/";
+  }
+  const goLinkedIn = () => {
+    window.location = " https://www.linkedin.com/in/frankraso/"
   }
 
   const loadImages = async () => {
@@ -55,7 +59,8 @@ function AboutPage() {
       <h4>About the Creator:</h4>
       <h5>Frank Raso</h5>
       <p className='aboutText'>
-        <BsIcons.BsGithub className='personals' onClick={gogo} />
+        <BsIcons.BsGithub className='personals' onClick={gogit} />
+        <FaIcons.FaLinkedin className='personals' onClick={goLinkedIn} />
       </p>
     </div>
   );
