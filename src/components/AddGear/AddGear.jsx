@@ -11,6 +11,9 @@ import { FormControl, Select } from '@material-ui/core';
 import { InputLabel } from '@material-ui/core';
 import { Input } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
+import { TextareaAutosize } from '@material-ui/core';
+import { OutlinedInput } from '@material-ui/core';
+
 
 
 
@@ -111,39 +114,46 @@ function AddReview() {
     }
   };
 
-
   return (
-    <div className="container">
-        <h2>- Add Gear -</h2>
-        <br />
+    <div className="addContainer">
+      <h2>- Add Gear -</h2>
+      <br />
       <div>
         <br />
+        <span className='previewImg'>
+        {previewSource && (<img src={previewSource} alt="chosen" style={{ height: '200px' }} />)}
+        </span>
       </div>
-      <input color='primary' variant='contained' type="file" name='image' onChange={handleFileInputChange} />
-        <Button color='primary' variant='contained' onClick={uploadImage} >Upload File</Button>
-
-      <input type="text" placeholder='Gear Make/Model' onChange={makeIn} />
-      {/* <TextField className='textfield'  type="text" onChange={makeIn} id="outlined-basic" label="Gear make/model" variant="outlined" /> */}
-
+      <Input color='primary' variant='contained' type="file" name='image' onChange={handleFileInputChange} />
+      <br />
+      <br />
+      <Button color='primary' variant='contained' onClick={uploadImage} >Upload File</Button>
+      <br />
+      <br />
+      <TextField className='textfield' type="text" onChange={makeIn}  label="Gear make/model" variant="standard" />
+      <br />
+      <br />
       <select onChange={typeIn} >
-        <option value="" selected disabled hidden>Gear Type</option>
+        <option value=""selected disabled hidden>Gear Type</option>
         <option value="Guitar">Guitar</option>
         <option value="Amp">Amp</option>
         <option value="Accessory">Accessory</option>
       </select>
 
-      <input type="text" placeholder='Year' onChange={yearIn} />
-      {/* <TextField className='textfield' type="text" onChange={yearIn} id="outlined-basic" label="Year" variant="outlined" /> */}
 
-      <input type="text" placeholder='Review' onChange={reviewIn} />
-      {/* <TextField className='textfield' type="text" onChange={reviewIn} id="outlined-basic" label="Review" variant="outlined" /> */}
-
-
-
-
+      <br />
+      <TextField className='textfield' type="text" onChange={yearIn} label="Year" variant="standard" />
+      <br />
+      <TextField
+        className='textfield'
+        type="text"
+        onChange={reviewIn}
+        label="Review"
+        multiline
+        minRows={8}
+        variant="standard" />
+      <br />
       <Button variant='contained' color="primary" className='btn' onClick={setGear} >Submit</Button>
-
-      {previewSource && (<img src={previewSource} alt="chosen" style={{ height: '300px' }} />)}
     </div>
   );
 };
