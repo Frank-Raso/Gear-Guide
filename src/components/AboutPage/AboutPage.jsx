@@ -3,7 +3,10 @@
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import {Image} from 'cloudinary-react';
+import { Image } from 'cloudinary-react';
+import { Link } from 'react-router-dom';
+import * as BsIcons from "react-icons/bs";
+
 import './AboutPage.css';
 // This is one of our simplest components
 // It doesn't have local state,
@@ -12,6 +15,9 @@ import './AboutPage.css';
 
 function AboutPage() {
   const [imageIDs, setImageIDs] = useState();
+  const gogo = () => {
+    window.location = "https://github.com/Lux302/";
+  }
 
   const loadImages = async () => {
     try {
@@ -31,13 +37,13 @@ function AboutPage() {
       <img className='ico' src="favicon.ico" alt="" />
 
       <h4>Welcome to the Gear Guide!</h4>
-        <p className='aboutText' >The Gear Guide was created for musicians and gear heads to come together and build upon the knowlege base of the industry, and to help upcoming musicians find the gear they love! </p>
+      <p className='aboutText' >The Gear Guide was created for musicians and gear heads to come together and build upon the knowlege base of the industry, and to help upcoming musicians find the gear they love! </p>
       <div>
         <br />
 
         {imageIDs && imageIDs.map((imageId, index) => (
           <Image
-          className="image"
+            className="image"
             key={index}
             cloudName="dzdhhbcfp"
             publicId={imageId}
@@ -45,6 +51,12 @@ function AboutPage() {
             crop="scale"
           />))}
       </div>
+
+      <h4>About the Creator:</h4>
+      <h5>Frank Raso</h5>
+      <p className='aboutText'>
+        <BsIcons.BsGithub className='personals' onClick={gogo} />
+      </p>
     </div>
   );
 }
