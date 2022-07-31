@@ -38,6 +38,9 @@ function Gear() {
         Pid = Number(id) + 1;
         history.push(`/gear/${Pid}`);
     }
+    const whereTheSidewalkEnds = () => {
+        history.push('/profile');
+    }
     const editGear = () => {
         console.log('/In edit')
         history.push(`/edit/${id}`);
@@ -62,9 +65,10 @@ function Gear() {
         <div className='gear_page' >
 
             {gear.length === 0 ?
-
-                <h1 className='spinner'></h1> :
+                <div> 
+                <h1 className='spinner'></h1></div> :
                 <div className='card' >
+
 
                     <img className='arrowL' src="left-arrow.png" onClick={minusOne} />
                     <img className='arrowR' src="right-arrow.png" onClick={plusOne} />
