@@ -13,25 +13,10 @@ function UserPage() {
     const gear = useSelector((store) => store.profileGear);
     const user = useSelector((store) => store.user);
 
-
-
     useEffect(() => {
         dispatch({ type: 'FETCH_GEAR' });
         dispatch({ type: 'FETCH_GEAR' });
     }, []);
-
-    const routeAllGear = () => {
-        history.push('/all');
-    };
-    const routeGuitars = () => {
-        history.push('/guitars');
-    };
-    const routeAmps = () => {
-        history.push('/amps');
-    };
-    const routeAccessories = () => {
-        history.push('/accessories');
-    };
 
     const gearR = (id) => {
         history.push(`/gear/${id}`)
@@ -39,7 +24,7 @@ function UserPage() {
     const routeAddGear = () => {
         history.push('/addgear')
     }
-
+    
     return (
         <div className="container">
 
