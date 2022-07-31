@@ -38,7 +38,7 @@ function Nav() {
               Home
             </Link>
   
-            <Link className="navLink" to="/all">
+            {/* <Link className="navLink" to="/all">
               All Gear
             </Link>
 
@@ -56,7 +56,7 @@ function Nav() {
 
             <Link className="navLink" to="/addgear">
               Add Gear
-            </Link>  
+            </Link>   */}
 
 
             <Link className="navLink" to="/about">

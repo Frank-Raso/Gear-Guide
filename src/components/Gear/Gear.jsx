@@ -21,13 +21,22 @@ function Gear() {
     const delete_Gear = async () => {
         if (window.confirm('Are you sure you want to delete this gear?')) {
             dispatch({ type: 'DELETE_GEAR', payload: id });
-            setTimeout(function(){
-                 history.push('/');
+            setTimeout(function () {
+                history.push('/');
             }, 1);
-           
+
         }
     }
-
+    const minusOne = () => {
+        let Mid;
+        Mid =Number(id) - 1;
+        history.push(`/gear/${Mid}`);
+    }
+    const plusOne = () => {
+        let Pid;
+        Pid = Number(id) + 1;
+        history.push(`/gear/${Pid}`);
+    }
     const editGear = () => {
         console.log('/In edit')
         history.push(`/edit/${id}`);
@@ -49,7 +58,9 @@ function Gear() {
 
 
     return (
+
         <div className='gear_page' >
+            
             {gear.length === 0 ?
 
                 <h1 className='spinner'></h1> :
@@ -64,7 +75,8 @@ function Gear() {
                     {/* <p>{gear[0].type_id}</p> */}
                     <p>{gear[0].review}</p>
                     <div>{upDel()}</div>
-
+                    <button onClick={minusOne} >Previous</button>
+                    <button onClick={plusOne} >Next</button>
                 </div>
             }
 
