@@ -32,18 +32,29 @@ function Edit() {
   const [review, setReview] = useState('');
   const [img, setImg] = useState('');
   const [value, setValue] = useState('');
+  let userImage = useSelector(store => store.imageReducer);
+  const editImage = useSelector(store => store.imageEditReducer);
 
   let { id } = useParams();
   const classes = useStyles();
 
   const uploadImage = () => {
-  // let userImage = useSelector(store => store.imageReducer);
     console.log('TESTING UPLOAD IMAGE', img);
     let imageToSend = new FormData();
     imageToSend.append('file', img);
     console.log(imageToSend);
-    dispatch({ type: 'SEND_IMAGE', payload: imageToSend });
+    dispatch({ type: 'SEND_EDITIMAGE', payload: imageToSend });
   }
+
+  const setNewUpload = () => {
+      let gearPost = {
+        image: editImage,
+        id: id,
+      };
+      console.log(gearPost);
+      dispatch({ type: 'EDIT_PUTIMAGE', payload: gearPost });
+    };
+
   const handleValueChange = (event) => setValue(event.target.value);
 
   const makeIn = () => {
@@ -68,7 +79,7 @@ function Edit() {
   }
 
   const setGear = (event) => {
-    let userImage = gear[0].image;
+    setNewUpload();
     console.log(makeModel);
     console.log(year);
     console.log(value);
@@ -90,7 +101,6 @@ function Edit() {
         year: year,
         review: review,
         user_id: user.id,
-        image: userImage,
         id: id,
       };
       console.log(gearPost);
@@ -195,6 +205,7 @@ return (
   </div>
 );
 };
+
 
 // this allows us to use <App /> in index.js
 export default Edit;

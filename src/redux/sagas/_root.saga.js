@@ -11,6 +11,8 @@ import accessoriesSaga from './accessories.saga';
 import deleteSaga from './deleteGear.saga';
 import editSaga from './edit.saga';
 import uploadImageSaga from './image.saga';
+import sendEditImageSaga from './imageEdit.saga';
+import editPutImageSaga from './editPutImage.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -33,5 +35,7 @@ export default function* rootSaga() {
     deleteSaga(),
     editSaga(),
     uploadImageSaga(),
+    sendEditImageSaga(),
+    editPutImageSaga(),
   ]);
 }
