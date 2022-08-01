@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import LogOutButton from '../LogOutButton/LogOutButton';
+
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import axios from 'axios';
@@ -8,9 +8,15 @@ import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
 import { TextField } from '@material-ui/core';
 import { MenuItem } from '@material-ui/core';
-import { FormControl, Select } from '@material-ui/core';
+import { FormControl, Select, makeStyles } from '@material-ui/core';
 import {InputLabel} from '@material-ui/core';
 import {Button} from '@material-ui/core';
+
+const useStyles = makeStyles(theme => ({
+  formControl: {
+    minWidth: 160,
+  }
+}));
 
 
 function Edit() {
@@ -26,6 +32,10 @@ function Edit() {
   const [review, setReview] = useState('');
   const [img, setImg] = useState('');
   let { id } = useParams();
+  const [value, setValue] = useState('');
+
+
+  const classes = useStyles();
 
   const uploadImage = () => {
     console.log('TESTING UPLOAD IMAGE', img);
@@ -34,6 +44,7 @@ function Edit() {
     console.log(imageToSend);
     dispatch({ type: 'SEND_IMAGE', payload: imageToSend });
   }
+  const handleValueChange = (event) => setValue(event.target.value);
 
   const makeIn = () => {
     console.log('in makeIn:')
@@ -59,12 +70,12 @@ function Edit() {
   const setGear = (event) => {
     console.log(makeModel);
     console.log(year);
-    console.log(type);
+    console.log(value);
     console.log(review);
 
     if (makeModel === "") {
       alert('Please add Make/Model before continuing')
-    } if (type === "") {
+    } if (value === "") {
       alert('Please add Type before continuing')
     } else if (year === "") {
       alert('Please add Year before continuing')
@@ -74,7 +85,7 @@ function Edit() {
     else {
       let gearPost = {
         title: makeModel,
-        type_id: type,
+        type_id: value,
         year: year,
         review: review,
         user_id: user.id,
@@ -95,6 +106,13 @@ function Edit() {
     setImg(file);
   };
 
+  useEffect(() => {
+    if (img !='') {
+    console.log('in useEffect');
+    uploadImage();
+  }
+  },[img]);
+
   const previewFile = (file) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
@@ -104,39 +122,51 @@ function Edit() {
   };
  
   return (
-    <div className="container">
-
-        <h2>- Edit Gear -</h2>
-        <br />
-        <br />
-
-        <input type="file" name='image' onChange={handleFileInputChange} />
-        <Button  color='primary' variant='contained' onClick={uploadImage} >Upload File</Button>
-
-
-
-        <input type="text" placeholder='Gear Make/Model' onChange={makeIn} />
-        {/* <TextField className='textfield'  type="text" onChange={makeIn} id="outlined-basic" label="Gear make/model" variant="outlined" /> */}
-
-        <select onChange={typeIn} >
-          <option value="" selected disabled hidden>Gear Type</option>
-          <option value="Guitar">Guitar</option>
-          <option value="Amp">Amp</option>
-          <option value="Accessory">Accessory</option>
-        </select>
-        
-        <input type="text" placeholder='Year' onChange={yearIn} />
-        {/* <TextField className='textfield' type="text" onChange={yearIn} id="outlined-basic" label="Year" variant="outlined" /> */}
-
-        <input type="text" placeholder='Review' onChange={reviewIn} />
-        {/* <TextField className='textfield' type="text" onChange={reviewIn} id="outlined-basic" label="Review" variant="outlined" /> */}
-
-
-        <Button variant='contained' color="primary" className='btn' onClick={setGear} >Submit</Button>
-
-      {previewSource && (<img src={previewSource} alt="chosen" style={{ height: '300px' }} />)}
+    <div className="addContainer">
+    <h2>- Edit Gear -</h2>
+    <br />
+    <div>
+      <br />
+      <span className='previewImg'>
+        {previewSource && (<img src={previewSource} alt="chosen" style={{ height: '200px' }} />)}
+      </span>
     </div>
-  );
+    <Button variant='contained' color='primary'  component="label">Upload Img<input color='primary' variant='contained' type="file" name='img'  onChange={handleFileInputChange} hidden /></Button>
+    <br />
+    <br />
+    <br />
+    <br />
+    <TextField  className='textfield' type="text" onChange={makeIn} label=" Make-Model" variant="standard" />
+    <br />
+    <br />
+
+    <FormControl className={classes.formControl} >
+      <InputLabel
+
+      > Gear Type </InputLabel>
+      <Select onChange={handleValueChange} >
+        <MenuItem value='Guitar'>Guitar</MenuItem>
+        <MenuItem value='Amp'>Amp</MenuItem>
+        <MenuItem value='Accessory'>Accessory</MenuItem>
+      </Select>
+    </FormControl>
+    <br />
+    <br />
+    <br />
+    <TextField className='textfield' type="text" onChange={yearIn} label="Year" variant="standard" />
+    <br />
+    <TextField
+      className='textfield'
+      type="text"
+      onChange={reviewIn}
+      label="Review"
+      multiline
+      minRows={6}
+      variant="standard" />
+    <br />
+    <Button variant='contained' color="primary" className='btn' onClick={setGear} >Submit</Button>
+  </div>
+);
 };
 
 // this allows us to use <App /> in index.js
