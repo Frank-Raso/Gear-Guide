@@ -34,9 +34,9 @@ function AddReview() {
   const [review, setReview] = useState('');
   const [img, setImg] = useState('');
   const [value, setValue] = useState('');
-  
+
   const classes = useStyles();
-  
+
   const uploadImage = () => {
     console.log('TESTING UPLOAD IMAGE', img);
     let imageToSend = new FormData();
@@ -44,8 +44,6 @@ function AddReview() {
     console.log(imageToSend);
     dispatch({ type: 'SEND_IMAGE', payload: imageToSend });
   }
-  
-  
   const handleValueChange = (event) => setValue(event.target.value);
   const makeIn = () => {
     console.log('in makeIn:')
@@ -70,7 +68,6 @@ function AddReview() {
 
 
   const setGear = () => {
-
 
     console.log(makeModel);
     console.log(year);
@@ -112,7 +109,15 @@ function AddReview() {
     const file = e.target.files[0];
     previewFile(file);
     setImg(file);
+
   };
+
+  useEffect(() => {
+    if (img !='') {
+    console.log('in useEffect');
+    uploadImage();
+  }
+  },[img]);
 
   const previewFile = (file) => {
     const reader = new FileReader();
@@ -132,13 +137,12 @@ function AddReview() {
           {previewSource && (<img src={previewSource} alt="chosen" style={{ height: '200px' }} />)}
         </span>
       </div>
-      <Input color='primary' variant='contained' type="file" name='image' onChange={handleFileInputChange} />
+      <Button variant='contained' color='primary'  component="label">Upload<input color='primary' variant='contained' type="file" name='img'  onChange={handleFileInputChange} hidden /></Button>
       <br />
       <br />
-      <Button color='primary' variant='contained' onClick={uploadImage} >Upload File</Button>
       <br />
       <br />
-      <TextField className='textfield' type="text" onChange={makeIn} label=" Make-Model" variant="standard" />
+      <TextField  className='textfield' type="text" onChange={makeIn} label=" Make-Model" variant="standard" />
       <br />
       <br />
 
@@ -151,7 +155,7 @@ function AddReview() {
           <MenuItem value='Amp'>Amp</MenuItem>
           <MenuItem value='Accessory'>Accessory</MenuItem>
         </Select>
-      </FormControl> 
+      </FormControl>
       <br />
       <br />
       <br />
