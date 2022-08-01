@@ -37,7 +37,7 @@ function Edit() {
   const classes = useStyles();
 
   const uploadImage = () => {
-  let userImage = useSelector(store => store.imageReducer);
+  // let userImage = useSelector(store => store.imageReducer);
     console.log('TESTING UPLOAD IMAGE', img);
     let imageToSend = new FormData();
     imageToSend.append('file', img);
