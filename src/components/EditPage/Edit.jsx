@@ -6,11 +6,12 @@ import axios from 'axios';
 import './Edit.css';
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
-import { TextField } from '@material-ui/core';
+import { TextareaAutosize, TextField } from '@material-ui/core';
 import { MenuItem } from '@material-ui/core';
 import { FormControl, Select, makeStyles } from '@material-ui/core';
-import {InputLabel} from '@material-ui/core';
-import {Button} from '@material-ui/core';
+import { InputLabel } from '@material-ui/core';
+import { Button } from '@material-ui/core';
+
 
 const useStyles = makeStyles(theme => ({
   formControl: {
@@ -22,22 +23,21 @@ const useStyles = makeStyles(theme => ({
 function Edit() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const userImage = useSelector(store => store.imageReducer);
   const user = useSelector((store) => store.user);
+  const gear = useSelector((store) => store.eachGear);
   const [previewSource, setPreviewSource] = useState();
-
   const [makeModel, setMakeModel] = useState('');
   const [year, setYear] = useState('');
   const [type, setType] = useState('');
   const [review, setReview] = useState('');
   const [img, setImg] = useState('');
-  let { id } = useParams();
   const [value, setValue] = useState('');
 
-
+  let { id } = useParams();
   const classes = useStyles();
 
   const uploadImage = () => {
+  let userImage = useSelector(store => store.imageReducer);
     console.log('TESTING UPLOAD IMAGE', img);
     let imageToSend = new FormData();
     imageToSend.append('file', img);
@@ -68,6 +68,7 @@ function Edit() {
   }
 
   const setGear = (event) => {
+    let userImage = gear[0].image;
     console.log(makeModel);
     console.log(year);
     console.log(value);
@@ -90,13 +91,13 @@ function Edit() {
         review: review,
         user_id: user.id,
         image: userImage,
-        id:id,
+        id: id,
       };
-        console.log(gearPost);
-        dispatch({ type: 'EDIT_GEAR', payload: gearPost });
-        setTimeout(function(){
-          history.push('/profile');
-     }, 1);
+      console.log(gearPost);
+      dispatch({ type: 'EDIT_GEAR', payload: gearPost });
+      setTimeout(function () {
+        history.push('/profile');
+      }, 1);
     }
   }
 
@@ -107,22 +108,29 @@ function Edit() {
   };
 
   useEffect(() => {
-    if (img !='') {
-    console.log('in useEffect');
-    uploadImage();
-  }
-  },[img]);
-
-  const previewFile = (file) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      setPreviewSource(reader.result);
+    if (img != '') {
+      console.log('in useEffect');
+      uploadImage();
     }
-  };
- 
-  return (
-    <div className="addContainer">
+      console.log('in useEffect');
+      setMakeModel(gear[0].title);
+      setYear(gear[0].year);
+      setReview(gear[0].review);
+      setValue(gear[0].type_id)
+      let userImage = gear[0].image;
+      setPreviewSource(userImage);
+}, [img]);
+
+const previewFile = (file) => {
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = () => {
+    setPreviewSource(reader.result);
+  }
+};
+
+return (
+  <div className="addContainer">
     <h2>- Edit Gear -</h2>
     <br />
     <div>
@@ -131,12 +139,19 @@ function Edit() {
         {previewSource && (<img src={previewSource} alt="chosen" style={{ height: '200px' }} />)}
       </span>
     </div>
-    <Button variant='contained' color='primary'  component="label">Upload Img<input color='primary' variant='contained' type="file" name='img'  onChange={handleFileInputChange} hidden /></Button>
+    <Button variant='contained' color='primary' component="label">Upload Img<input color='primary' variant='contained' type="file" name='img' onChange={handleFileInputChange} hidden /></Button>
     <br />
     <br />
     <br />
     <br />
-    <TextField  className='textfield' type="text" onChange={makeIn} label=" Make-Model" variant="standard" />
+    <TextField
+      className='textfield'
+      defaultValue={gear[0].title}
+
+      type="text"
+      onChange={makeIn}
+      label=" Make-Model"
+      variant="standard" />
     <br />
     <br />
 
@@ -144,7 +159,10 @@ function Edit() {
       <InputLabel
 
       > Gear Type </InputLabel>
-      <Select onChange={handleValueChange} >
+      <Select
+        onChange={handleValueChange}
+        defaultValue={gear[0].type_id}
+      >
         <MenuItem value='Guitar'>Guitar</MenuItem>
         <MenuItem value='Amp'>Amp</MenuItem>
         <MenuItem value='Accessory'>Accessory</MenuItem>
@@ -153,15 +171,24 @@ function Edit() {
     <br />
     <br />
     <br />
-    <TextField className='textfield' type="text" onChange={yearIn} label="Year" variant="standard" />
-    <br />
     <TextField
+      className='textfield'
+      type="text"
+      onChange={yearIn}
+      label="Year"
+      variant="standard"
+      defaultValue={gear[0].year} />
+    <br />
+    <TextareaAutosize
+      defaultValue={gear[0].review}
       className='textfield'
       type="text"
       onChange={reviewIn}
       label="Review"
       multiline
       minRows={6}
+      maxRows={8}
+      style={{ width: 400, backgroundColor: 'transparent' }}
       variant="standard" />
     <br />
     <Button variant='contained' color="primary" className='btn' onClick={setGear} >Submit</Button>

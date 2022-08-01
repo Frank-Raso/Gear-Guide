@@ -11,12 +11,13 @@ import { FormControl, Select, makeStyles } from '@material-ui/core';
 import { InputLabel } from '@material-ui/core';
 import { Input } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
+import {TextareaAutosize} from '@material-ui/core';
 
 
 
 const useStyles = makeStyles(theme => ({
   formControl: {
-    minWidth: 160,
+    minWidth: 200,
   }
 }));
 
@@ -136,7 +137,7 @@ function AddReview() {
           {previewSource && (<img src={previewSource} alt="chosen" style={{ height: '200px' }} />)}
         </span>
       </div>
-      <Button variant='contained' color='primary'  component="label">Upload<input color='primary' variant='contained' type="file" name='img'  onChange={handleFileInputChange} hidden /></Button>
+      <Button variant='contained' color='primary'  component="label">Upload Img<input color='primary' variant='contained' type="file" name='img'  onChange={handleFileInputChange} hidden /></Button>
       <br />
       <br />
       <br />
@@ -146,7 +147,7 @@ function AddReview() {
       <br />
 
       <FormControl className={classes.formControl} >
-        <InputLabel
+        <InputLabel variant='standard'
 
         > Gear Type </InputLabel>
         <Select onChange={handleValueChange} >
@@ -157,16 +158,19 @@ function AddReview() {
       </FormControl>
       <br />
       <br />
-      <br />
       <TextField className='textfield' type="text" onChange={yearIn} label="Year" variant="standard" />
       <br />
-      <TextField
+      <br />
+      <br />
+      <TextareaAutosize
         className='textfield'
         type="text"
         onChange={reviewIn}
         label="Review"
         multiline
         minRows={6}
+        maxRows={8}
+        style={{ width: 400, backgroundColor: 'transparent' }}
         variant="standard" />
       <br />
       <Button variant='contained' color="primary" className='btn' onClick={setGear} >Submit</Button>
