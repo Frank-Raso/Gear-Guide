@@ -142,14 +142,14 @@ function AddReview() {
       <br />
       <br />
       <br />
-      <TextField className='textfield' type="text" onChange={makeIn} label=" Make-Model" variant="standard" />
+      <TextField color='primary' className='textfield' type="text" onChange={makeIn} label=" Make-Model" variant="standard" />
       <br />
       <br />
       <FormControl className={classes.formControl} >
-        <InputLabel variant='standard'
+        <InputLabel variant='standard' color='primary'
 
         > Gear Type </InputLabel>
-        <Select onChange={handleValueChange} >
+        <Select onChange={handleValueChange} color='primary'>
           <MenuItem value='Guitar'>Guitar</MenuItem>
           <MenuItem value='Amp'>Amp</MenuItem>
           <MenuItem value='Accessory'>Accessory</MenuItem>
@@ -157,11 +157,12 @@ function AddReview() {
       </FormControl>
       <br />
       <br />
-      <TextField className='textfield' type="text" onChange={yearIn} label="Year" variant="standard" />
+      <TextField color='primary' className='textfield' type="text" onChange={yearIn} label="Year" variant="standard" />
       <br />
       <br />
       <br />
       <TextareaAutosize
+        defaultValue="Review"
         className='textfield'
         type="text"
         onChange={reviewIn}

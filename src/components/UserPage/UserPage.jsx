@@ -32,7 +32,7 @@ function UserPage() {
             <Avatar className='avatar'
             >{user.username[0]}
             </Avatar>
-            <p>Welcome {user.username}!</p>
+            <p>{user.username}'s Gear</p>
 
             <div className='GearList'>
                 {gear.map(eachGear => {
@@ -49,14 +49,13 @@ function UserPage() {
                         </div>
                     );
                 })}
-
             </div>
             <br />
             <br />
             <br />
+            <img className='addclick' src="2x.png" alt="" onClick={routeAddGear} />
             <br />
-
-
+            <br />
         </div>
     );
 }

@@ -1,14 +1,14 @@
 /* --------------------------------------------------------------------------------
 Grid
 -------------------------------------------------------------------------------- */
-
+/* 
 .grid {
   display: flex;
   flex: 0 1 auto;
-  /* defaults to 'row' */
+
   flex-direction: row;
   flex-wrap: wrap;
-  /* defaults to 'flex-start' */
+
   justify-content: flex-start;
   align-items: flex-start;
   margin-top: 4%;
@@ -78,4 +78,10 @@ Grid
 .grid-col_12 {
   flex-basis: 100%;
   max-width: 100%;
+} */
+.text{
+  margin: auto;
+  max-width: 700px;
+  text-align: center;
+  padding: 1%;
 }
