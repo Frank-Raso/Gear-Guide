@@ -43,13 +43,7 @@ function Edit() {
     let imageToSend = new FormData();
     imageToSend.append('file', img);
     console.log(imageToSend);
-    dispatch({ type: 'SEND_EDITIMAGE', payload: imageToSend });//this takes a while to upload to do this first and then state will change
-  //   setTimeout(function(){
-  //     console.log("Executed after 1 second");
-  //     setNewUpload();
-  // }, 2000);
-
-
+    dispatch({ type: 'SEND_EDITIMAGE', payload: imageToSend });
   }
 
 
@@ -67,7 +61,7 @@ function Edit() {
 
       setNewUpload();
     }
-  },[editImage])
+  }, [editImage])
 
   const handleValueChange = (event) => setValue(event.target.value);
 
@@ -129,17 +123,17 @@ function Edit() {
     previewFile(file);
     setImg(file);
   };
-  
+
   useEffect(() => {
     if (img != '') {
       console.log('in useEffect');
       uploadImage();
     }
-  
+
   }, [img]);
-  
+
   useEffect(() => {
-  
+
     console.log('in useEffect');
     setMakeModel(gear[0].title);
     setYear(gear[0].year);
@@ -158,68 +152,75 @@ function Edit() {
   };
 
   return (
-    <div className="addContainer">
-      <h2>- Edit Gear -</h2>
-      <br />
-      <div>
-        <br />
-        <span className='previewImg'>
-          {previewSource && (<img src={previewSource} alt="chosen" style={{ height: '200px' }} />)}
-        </span>
-      </div>
-      <Button variant='contained' color='primary' component="label">Upload Img<input color='primary' variant='contained' type="file" name='img' onChange={handleFileInputChange} hidden /></Button>
-      <br />
-      <br />
-      <br />
-      <br />
-      <TextField
-        className='textfield'
-        defaultValue={gear[0].title}
+    <div className='gear_page' >
 
-        type="text"
-        onChange={makeIn}
-        label=" Make-Model"
-        variant="standard" />
-      <br />
-      <br />
+      {gear.length === 0 ?
+        <div>
+          <h1 className='spinner'></h1></div> :
+        <div className="addContainer">
+          <h2>- Edit Gear -</h2>
+          <br />
+          <div>
+            <br />
+            <span className='previewImg'>
+              {previewSource && (<img src={previewSource} alt="chosen" style={{ height: '200px' }} />)}
+            </span>
+          </div>
+          <Button variant='contained' color='primary' component="label">Upload Img<input color='primary' variant='contained' type="file" name='img' onChange={handleFileInputChange} hidden /></Button>
+          <br />
+          <br />
+          <br />
+          <br />
+          <TextField
+            className='textfield'
+            defaultValue={gear[0].title}
 
-      <FormControl className={classes.formControl} >
-        <InputLabel
+            type="text"
+            onChange={makeIn}
+            label=" Make-Model"
+            variant="standard" />
+          <br />
+          <br />
 
-        > Gear Type </InputLabel>
-        <Select
-          onChange={handleValueChange}
-          defaultValue={gear[0].type_id}
-        >
-          <MenuItem value='Guitar'>Guitar</MenuItem>
-          <MenuItem value='Amp'>Amp</MenuItem>
-          <MenuItem value='Accessory'>Accessory</MenuItem>
-        </Select>
-      </FormControl>
-      <br />
-      <br />
-      <br />
-      <TextField
-        className='textfield'
-        type="text"
-        onChange={yearIn}
-        label="Year"
-        variant="standard"
-        defaultValue={gear[0].year} />
-      <br />
-      <TextareaAutosize
-        defaultValue={gear[0].review}
-        className='textfield'
-        type="text"
-        onChange={reviewIn}
-        label="Review"
-        multiline
-        minRows={6}
-        maxRows={8}
-        style={{ width: 400, backgroundColor: 'transparent' }}
-        variant="standard" />
-      <br />
-      <Button variant='contained' color="primary" className='btn' onClick={setGear} >Submit</Button>
+          <FormControl className={classes.formControl} >
+            <InputLabel
+
+            > Gear Type </InputLabel>
+            <Select
+              onChange={handleValueChange}
+              defaultValue={gear[0].type_id}
+            >
+              <MenuItem value='Guitar'>Guitar</MenuItem>
+              <MenuItem value='Amp'>Amp</MenuItem>
+              <MenuItem value='Accessory'>Accessory</MenuItem>
+            </Select>
+          </FormControl>
+          <br />
+          <br />
+          <br />
+          <TextField
+            className='textfield'
+            type="text"
+            onChange={yearIn}
+            label="Year"
+            variant="standard"
+            defaultValue={gear[0].year} />
+          <br />
+          <TextareaAutosize
+            defaultValue={gear[0].review}
+            className='textfield'
+            type="text"
+            onChange={reviewIn}
+            label="Review"
+            multiline
+            minRows={6}
+            maxRows={8}
+            style={{ width: 400, backgroundColor: 'transparent' }}
+            variant="standard" />
+          <br />
+          <Button variant='contained' color="primary" className='btn' onClick={setGear} >Submit</Button>
+        </div>
+      }
     </div>
   );
 };

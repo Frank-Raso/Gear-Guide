@@ -42,8 +42,8 @@ app.use('/api/guitars', getGuitarsRouter);
 app.use('/api/accessories', getAccessoriesRouter);
 app.use('/api/edit', editGearRouter);
 app.use('/api/uploadImage', uploadImageRouter);
-app.use('/api/uploadEditImage',uploadEditImageRouter)
-app.use('/api/edit/putimage',editPutImageRouter)
+app.use('/api/uploadEditImage', uploadEditImageRouter)
+app.use('/api/edit/putimage', editPutImageRouter)
 
 
 app.get('/api/images', async (req, res) => {

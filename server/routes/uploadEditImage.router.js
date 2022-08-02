@@ -11,7 +11,7 @@ const storage = new CloudinaryStorage({
     folder: "ml_default",
   },
 });
-const upload = multer({storage: storage});
+const upload = multer({ storage: storage });
 
 router.post('/', upload.single('file'), (req, res) => {
   console.log(req.file);

@@ -20,13 +20,13 @@ function LandingPage() {
 
       <div className="grid">
         <div className="grid-col grid-col_8">
-          
+
           <p>
             Welcome to The Gear Guide!
           </p>
 
           <p>
-          The Gear Guide was created for musicians and gear heads to come together and build upon the knowlege base of the industry, and to help upcoming musicians find the gear they love!
+            The Gear Guide was created for musicians and gear heads to come together and build upon the knowlege base of the industry, and to help upcoming musicians find the gear they love!
           </p>
         </div>
         <div className="grid-col grid-col_4">
@@ -34,7 +34,7 @@ function LandingPage() {
 
           <center>
             <h4>Already a Member?</h4>
-            <Button  variant="contained" color="primary" className="btn btn_sizeSm" onClick={onLogin}>
+            <Button variant="contained" color="primary" className="btn btn_sizeSm" onClick={onLogin}>
               Login
             </Button>
           </center>

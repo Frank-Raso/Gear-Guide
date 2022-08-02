@@ -21,22 +21,22 @@ function Accessories() {
     return (
         <div className='container' >
             <h2>- Accessories -</h2>
-                <div className="AccessoryList" >
-                    {gear.map(eachGear => {
-                        return (
-                            <div key={eachGear.id} >
-                                <div>
+            <div className="AccessoryList" >
+                {gear.map(eachGear => {
+                    return (
+                        <div key={eachGear.id} >
+                            <div>
 
-                                    <img className='AccessoryImg' onClick={() => gearR(eachGear.id)}
+                                <img className='AccessoryImg' onClick={() => gearR(eachGear.id)}
                                     src={eachGear.image} ></img>
 
-                                    <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.year}  :  {eachGear.title}</h3>
-                                    
-                                </div>
+                                <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.year}  :  {eachGear.title}</h3>
+
                             </div>
-                        );
-                    })}
-                </div>
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 }

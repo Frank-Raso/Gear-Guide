@@ -73,20 +73,20 @@ function App() {
             <UserPage />
           </ProtectedRoute>
 
-          <ProtectedRoute     
-          exact     
+          <ProtectedRoute
+            exact
             path="/gear/:id"
           >
 
-            <Gear/>
+            <Gear />
           </ProtectedRoute>
 
-          <ProtectedRoute     
-          exact     
+          <ProtectedRoute
+            exact
             path="/edit/:id"
           >
 
-            <Edit/>
+            <Edit />
           </ProtectedRoute>
 
 
@@ -98,7 +98,7 @@ function App() {
             path="/addGear"
           >
 
-            <AddGear/>
+            <AddGear />
           </ProtectedRoute>
 
           <ProtectedRoute
@@ -107,7 +107,7 @@ function App() {
             path="/all"
           >
 
-            <All_Gear/>
+            <All_Gear />
           </ProtectedRoute>
 
           <ProtectedRoute
@@ -116,7 +116,7 @@ function App() {
             path="/guitars"
           >
 
-            <Guitars/>
+            <Guitars />
           </ProtectedRoute>
           <ProtectedRoute
 
@@ -124,14 +124,14 @@ function App() {
             path="/amps"
           >
 
-            <Amps/>
+            <Amps />
           </ProtectedRoute>
           <ProtectedRoute
 
             exact
             path="/Accessories"
           >
-            <Accessories/>
+            <Accessories />
           </ProtectedRoute>
 
 
@@ -145,7 +145,7 @@ function App() {
 
 
 
-          
+
 
           <Route
             exact

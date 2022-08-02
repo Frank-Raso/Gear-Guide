@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createTheme,ThemeProvider } from '@material-ui/core';
+import { createTheme, ThemeProvider } from '@material-ui/core';
 import store from './redux/store';
 import App from './components/App/App';
 const theme = createTheme({
@@ -17,6 +17,6 @@ ReactDOM.render(
   <ThemeProvider theme={theme}><Provider store={store}>
     <App />
   </Provider></ThemeProvider>
-,
+  ,
   document.getElementById('react-root'),
 );

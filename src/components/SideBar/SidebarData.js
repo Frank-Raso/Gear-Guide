@@ -14,7 +14,7 @@ export const SidebarData = [
   {
     title: 'All Gear',
     path: '/all',
-    icon: <FaIcons.FaBoxOpen/>,
+    icon: <FaIcons.FaBoxOpen />,
     cName: 'nav-text'
   },
   {
@@ -38,7 +38,7 @@ export const SidebarData = [
   {
     title: 'Add Gear',
     path: '/addgear',
-    icon: <FaIcons.FaPlus/>,
+    icon: <FaIcons.FaPlus />,
     cName: 'nav-text'
   }
 ];

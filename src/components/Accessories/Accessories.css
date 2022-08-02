@@ -1,23 +1,25 @@
-div{
+div {
     text-align: center;
     margin: 0 auto;
 }
 
-.AccessoryList{
+.AccessoryList {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: auto;
     margin-top: 4%;
-    margin-left:15% ;
+    margin-left: 15%;
 
 }
-.AccessoryImg{
+
+.AccessoryImg {
     height: 200px;
     width: auto;
     border-radius: 15px;
 }
-.AccessoryImg:hover{
+
+.AccessoryImg:hover {
     transform: scale(1.1);
     transition: all .3s ease;
     cursor: pointer;

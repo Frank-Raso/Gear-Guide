@@ -65,8 +65,8 @@ function Gear() {
         <div className='gear_page' >
 
             {gear.length === 0 ?
-                <div> 
-                <h1 className='spinner'></h1></div> :
+                <div>
+                    <h1 className='spinner'></h1></div> :
                 <div className='card' >
 
 

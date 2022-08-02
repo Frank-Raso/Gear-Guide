@@ -23,7 +23,7 @@ function All_Gear() {
 
         <div className='container'  >
             <h2>- All Gear -</h2>
-                
+
 
             <div className="AllGearList">
                 {gear.map(eachGear => {
@@ -31,7 +31,7 @@ function All_Gear() {
                         <div key={eachGear.id} >
                             <div>
 
-                                    <img className='AllImg' onClick={() => gearR(eachGear.id)}
+                                <img className='AllImg' onClick={() => gearR(eachGear.id)}
                                     src={eachGear.image} ></img>
 
                                 <h3 onClick={() => gearR(eachGear.id)} className='AllCatalogTitle' >{eachGear.year}  :  {eachGear.title}</h3>

@@ -11,7 +11,7 @@ import { FormControl, Select, makeStyles } from '@material-ui/core';
 import { InputLabel } from '@material-ui/core';
 import { Input } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import {TextareaAutosize} from '@material-ui/core';
+import { TextareaAutosize } from '@material-ui/core';
 
 
 
@@ -113,11 +113,11 @@ function AddReview() {
   };
 
   useEffect(() => {
-    if (img !='') {
-    console.log('in useEffect');
-    uploadImage();
-  }
-  },[img]);
+    if (img != '') {
+      console.log('in useEffect');
+      uploadImage();
+    }
+  }, [img]);
 
   const previewFile = (file) => {
     const reader = new FileReader();
@@ -137,15 +137,14 @@ function AddReview() {
           {previewSource && (<img src={previewSource} alt="chosen" style={{ height: '200px' }} />)}
         </span>
       </div>
-      <Button variant='contained' color='primary'  component="label">Upload Img<input color='primary' variant='contained' type="file" name='img'  onChange={handleFileInputChange} hidden /></Button>
+      <Button variant='contained' color='primary' component="label">Upload Img<input color='primary' variant='contained' type="file" name='img' onChange={handleFileInputChange} hidden /></Button>
       <br />
       <br />
       <br />
       <br />
-      <TextField  className='textfield' type="text" onChange={makeIn} label=" Make-Model" variant="standard" />
+      <TextField className='textfield' type="text" onChange={makeIn} label=" Make-Model" variant="standard" />
       <br />
       <br />
-
       <FormControl className={classes.formControl} >
         <InputLabel variant='standard'
 

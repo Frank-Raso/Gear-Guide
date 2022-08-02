@@ -21,22 +21,22 @@ function Guitars() {
     return (
         <div className='container'  >
             <h2>- Guitars -</h2>
-                <div className="GuitarList">
-                    {gear.map(eachGear => {
-                        return (
-                            <div key={eachGear.id} >
-                                <div >
+            <div className="GuitarList">
+                {gear.map(eachGear => {
+                    return (
+                        <div key={eachGear.id} >
+                            <div >
 
-                                    <img className='AllImg' onClick={() => gearR(eachGear.id)}
+                                <img className='AllImg' onClick={() => gearR(eachGear.id)}
                                     src={eachGear.image} ></img>
 
-                                    <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.year}  :  {eachGear.title}</h3>
+                                <h3 onClick={() => gearR(eachGear.id)} className='catalogTitle' >{eachGear.year}  :  {eachGear.title}</h3>
 
-                                </div>
                             </div>
-                        );
-                    })}
-                </div>
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 }

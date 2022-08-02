@@ -24,7 +24,7 @@ function UserPage() {
     const routeAddGear = () => {
         history.push('/addgear')
     }
-    
+
     return (
         <div className="container">
 
