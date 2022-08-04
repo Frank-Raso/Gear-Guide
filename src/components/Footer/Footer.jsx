@@ -8,7 +8,6 @@ import './Footer.css';
 
 function Footer() {
   return <footer>&copy; Gear Guide</footer>;
-
 }
 
 export default Footer;
