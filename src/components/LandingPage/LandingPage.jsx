@@ -30,7 +30,6 @@ function LandingPage() {
         </div>
         <div className="grid-col grid-col_4">
           <RegisterForm />
-
           <center>
             <h4>Already a Member?</h4>
             <Button  variant="contained" color="primary" className="btn btn_sizeSm" onClick={onLogin}>
