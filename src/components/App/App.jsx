@@ -5,14 +5,10 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-
 import { useDispatch, useSelector } from 'react-redux';
-
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
-
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
@@ -26,12 +22,9 @@ import Amps from '../Amps/Amps';
 import Accessories from '../Accessories/Accessories';
 import Gear from '../Gear/Gear';
 import Edit from '../EditPage/Edit';
-
-
-
-
 import './App.css';
 import SideBar from '../SideBar/SideBar';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -133,20 +126,7 @@ function App() {
           >
             <Accessories />
           </ProtectedRoute>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          
           <Route
             exact
             path="/login"
