@@ -69,7 +69,6 @@ function Gear() {
                     <h1 className='spinner'></h1></div> :
                 <div className='card' >
 
-
                     <img className='arrowL' src="left-arrow.png" onClick={minusOne} />
                     <img className='arrowR' src="right-arrow.png" onClick={plusOne} />
                     <h2>{gear[0].title}</h2>
