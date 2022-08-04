@@ -181,10 +181,8 @@ function Edit() {
             variant="standard" />
           <br />
           <br />
-
           <FormControl className={classes.formControl} >
             <InputLabel
-
             > Gear Type </InputLabel>
             <Select
               onChange={handleValueChange}
