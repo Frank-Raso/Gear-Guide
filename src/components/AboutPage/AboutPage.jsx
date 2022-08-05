@@ -14,7 +14,7 @@ import './AboutPage.css';
 function AboutPage() {
   const [imageIDs, setImageIDs] = useState();
   const gogit = () => {
-    window.location = "https://github.com/Lux302/";
+    window.location = "https://github.com/Frank-Raso/";
   }
   const goLinkedIn = () => {
     window.location = " https://www.linkedin.com/in/frankraso/"
