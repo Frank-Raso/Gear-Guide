@@ -18,7 +18,6 @@ function All_Gear() {
     const gearR = (id) => {
         history.push(`/gear/${id}`)
     }
-
     return (
 
         <div className='container'  >

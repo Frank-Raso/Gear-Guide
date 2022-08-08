@@ -60,7 +60,6 @@ function Gear() {
 
     }
 
-
     return (
         <div className='gear_page' >
 

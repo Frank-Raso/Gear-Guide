@@ -25,10 +25,8 @@ import Edit from '../EditPage/Edit';
 import './App.css';
 import SideBar from '../SideBar/SideBar';
 
-
 function App() {
   const dispatch = useDispatch();
-
   const user = useSelector(store => store.user);
 
   useEffect(() => {
@@ -81,9 +79,6 @@ function App() {
 
             <Edit />
           </ProtectedRoute>
-
-
-
 
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
