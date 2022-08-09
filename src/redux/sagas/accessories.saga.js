@@ -15,8 +15,6 @@ function* fetchAccessoriesGear() {
 
 }
 
-
-
 function* accessoriesSaga() {
   yield takeLatest('FETCH_ACCESSORIES', fetchAccessoriesGear);
 
