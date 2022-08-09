@@ -51,8 +51,8 @@ function AboutPage() {
             crop="scale"
           />))} */}
       </div>
-      <p>This Site Uses</p>
-      <p>| React | Redux | Redux Saga| Node | Express | Multer | Cloudinary | Material UI | SQL | </p>
+      <p>This Site Utilizes</p>
+      <p> | React | Redux | Redux Saga| Node | Express | Multer | Cloudinary | Material UI | SQL | </p>
       <h4>About the Creator:</h4>
       <h5>Frank Raso</h5>
       <p className='aboutText'>
