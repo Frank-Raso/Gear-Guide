@@ -15,8 +15,6 @@ function* fetchAmpGear() {
 
 }
 
-
-
 function* ampSaga() {
   yield takeLatest('FETCH_AMPS', fetchAmpGear);
 
