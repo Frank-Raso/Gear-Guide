@@ -65,7 +65,6 @@ function AddReview() {
     console.log(type);
   }
 
-
   const setGear = () => {
 
     console.log(makeModel);
