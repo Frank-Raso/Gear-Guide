@@ -15,8 +15,6 @@ function* fetchAllGear() {
 
 }
 
-
-
 function* allSaga() {
   yield takeLatest('FETCH_ALLGEAR', fetchAllGear);
 
