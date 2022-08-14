@@ -25,7 +25,7 @@ function LandingPage() {
           <br />
           <br />
 
-          The Gear Guide was created for musicians and gear heads to come together and build upon the knowlege base of the industry, and to help upcoming musicians find the gear they love!
+          The Gear Guide was created for musicians and gear heads to come together and build upon the knowledge base of the industry, and to help upcoming musicians find the gear they love!
           </p>
         </div>
         <div className="grid-col grid-col_4">
