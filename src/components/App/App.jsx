@@ -1,36 +1,36 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import {
   HashRouter as Router,
   Redirect,
   Route,
   Switch,
-} from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import Nav from '../Nav/Nav';
-import Footer from '../Footer/Footer';
-import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-import AboutPage from '../AboutPage/AboutPage';
-import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
-import LandingPage from '../LandingPage/LandingPage';
-import LoginPage from '../LoginPage/LoginPage';
-import RegisterPage from '../RegisterPage/RegisterPage';
-import AddGear from '../AddGear/AddGear';
-import All_Gear from '../All_Gear/All_Gear';
-import Guitars from '../Guitars/Guitars';
-import Amps from '../Amps/Amps';
-import Accessories from '../Accessories/Accessories';
-import Gear from '../Gear/Gear';
-import Edit from '../EditPage/Edit';
-import './App.css';
-import SideBar from '../SideBar/SideBar';
+} from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import Nav from "../Nav/Nav";
+import Footer from "../Footer/Footer";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import AboutPage from "../AboutPage/AboutPage";
+import UserPage from "../UserPage/UserPage";
+import InfoPage from "../InfoPage/InfoPage";
+import LandingPage from "../LandingPage/LandingPage";
+import LoginPage from "../LoginPage/LoginPage";
+import RegisterPage from "../RegisterPage/RegisterPage";
+import AddGear from "../AddGear/AddGear";
+import All_Gear from "../All_Gear/All_Gear";
+import Guitars from "../Guitars/Guitars";
+import Amps from "../Amps/Amps";
+import Accessories from "../Accessories/Accessories";
+import Gear from "../Gear/Gear";
+import Edit from "../EditPage/Edit";
+import "./App.css";
+import SideBar from "../SideBar/SideBar";
 
 function App() {
   const dispatch = useDispatch();
-  const user = useSelector(store => store.user);
+  const user = useSelector((store) => store.user);
 
   useEffect(() => {
-    dispatch({ type: 'FETCH_USER' });
+    dispatch({ type: "FETCH_USER" });
   }, [dispatch]);
 
   return (
@@ -64,19 +64,11 @@ function App() {
             <UserPage />
           </ProtectedRoute>
 
-          <ProtectedRoute
-            exact
-            path="/gear/:id"
-          >
-
+          <ProtectedRoute exact path="/gear/:id">
             <Gear />
           </ProtectedRoute>
 
-          <ProtectedRoute
-            exact
-            path="/edit/:id"
-          >
-
+          <ProtectedRoute exact path="/edit/:id">
             <Edit />
           </ProtectedRoute>
 
@@ -85,83 +77,54 @@ function App() {
             exact
             path="/addGear"
           >
-
             <AddGear />
           </ProtectedRoute>
 
-          <ProtectedRoute
-
-            exact
-            path="/all"
-          >
-
+          <ProtectedRoute exact path="/all">
             <All_Gear />
           </ProtectedRoute>
 
-          <ProtectedRoute
-
-            exact
-            path="/guitars"
-          >
-
+          <ProtectedRoute exact path="/guitars">
             <Guitars />
           </ProtectedRoute>
-          <ProtectedRoute
-
-            exact
-            path="/amps"
-          >
-
+          <ProtectedRoute exact path="/amps">
             <Amps />
           </ProtectedRoute>
-          <ProtectedRoute
-
-            exact
-            path="/Accessories"
-          >
+          <ProtectedRoute exact path="/Accessories">
             <Accessories />
           </ProtectedRoute>
-          
-          <Route
-            exact
-            path="/login"
-          >
-            {user.id ?
-              // If the user is already logged in, 
+
+          <Route exact path="/login">
+            {user.id ? (
+              // If the user is already logged in,
               // redirect to the /user page
               <Redirect to="/profile" />
-              :
+            ) : (
               // Otherwise, show the login page
               <LoginPage />
-            }
+            )}
           </Route>
 
-          <Route
-            exact
-            path="/registration"
-          >
-            {user.id ?
-              // If the user is already logged in, 
+          <Route exact path="/registration">
+            {user.id ? (
+              // If the user is already logged in,
               // redirect them to the /user page
               <Redirect to="/profile" />
-              :
+            ) : (
               // Otherwise, show the registration page
               <RegisterPage />
-            }
+            )}
           </Route>
 
-          <Route
-            exact
-            path="/home"
-          >
-            {user.id ?
-              // If the user is already logged in, 
+          <Route exact path="/home">
+            {user.id ? (
+              // If the user is already logged in,
               // redirect them to the /user page
               <Redirect to="/profile" />
-              :
+            ) : (
               // Otherwise, show the Landing page
               <LandingPage />
-            }
+            )}
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}

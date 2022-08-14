@@ -4,16 +4,15 @@ body,
   height: 100%;
   background-color: rgb(23, 23, 23);
   /* background-color: rgb(0, 0, 0); */
-  background-image: url('/src/components/1.jpeg');
+  background-image: url("/src/components/1.jpeg");
   /* color:rgb(164, 163, 160); */
   color: rgba(255, 255, 255, 0.87);
-
 }
 
 body {
   /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 
   margin: 0px;
 }
@@ -124,7 +123,6 @@ Form Treatment
 input {
   margin: 5px;
   margin-bottom: 10px;
-
 }
 
 div {

@@ -1,36 +1,34 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-import { Input } from '@material-ui/core';
-import { Button } from '@material-ui/core';
-import { TextField } from '@material-ui/core';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { Input } from "@material-ui/core";
+import { Button } from "@material-ui/core";
+import { TextField } from "@material-ui/core";
 function LoginForm() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const errors = useSelector(store => store.errors);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const errors = useSelector((store) => store.errors);
   const dispatch = useDispatch();
-
 
   const login = (event) => {
     event.preventDefault();
 
     if (username && password) {
       dispatch({
-        type: 'LOGIN',
+        type: "LOGIN",
         payload: {
           username: username,
           password: password,
         },
       });
     } else {
-      dispatch({ type: 'LOGIN_INPUT_ERROR' });
+      dispatch({ type: "LOGIN_INPUT_ERROR" });
     }
   }; // end login
 
   return (
     <form className="formPanel" onSubmit={login}>
-
-      <img className='ico' src="favicon.ico" alt="" />
+      <img className="ico" src="favicon.ico" alt="" />
       {errors.loginMessage && (
         <h3 className="alert" role="alert">
           {errors.loginMessage}
@@ -39,10 +37,10 @@ function LoginForm() {
       <div>
         <label htmlFor="username">
           <TextField
-            variant='standard'
+            variant="standard"
             margin="normal"
             label="Username"
-            id='outlined-basic'
+            id="outlined-basic"
             type="text"
             name="username"
             required
@@ -52,13 +50,12 @@ function LoginForm() {
         </label>
       </div>
       <div>
-
         <label htmlFor="password">
           <TextField
-            variant='standard'
+            variant="standard"
             margin="normal"
-            label='Password'
-            id='outlined-basic'
+            label="Password"
+            id="outlined-basic"
             type="password"
             name="password"
             required
@@ -69,8 +66,16 @@ function LoginForm() {
       </div>
       <div>
         <br />
-        <Button variant="contained" color="primary" className="btn" type="submit" name="submit" value="Log In" >Login</Button>
-
+        <Button
+          variant="contained"
+          color="primary"
+          className="btn"
+          type="submit"
+          name="submit"
+          value="Log In"
+        >
+          Login
+        </Button>
       </div>
     </form>
   );

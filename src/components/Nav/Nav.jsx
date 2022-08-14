@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import LogOutButton from '../LogOutButton/LogOutButton';
-import './Nav.css';
-import { useSelector } from 'react-redux';
-import { Avatar } from '@material-ui/core';
+import React from "react";
+import { Link } from "react-router-dom";
+import LogOutButton from "../LogOutButton/LogOutButton";
+import "./Nav.css";
+import { useSelector } from "react-redux";
+import { Avatar } from "@material-ui/core";
 
 function Nav() {
   const user = useSelector((store) => store.user);
@@ -11,9 +11,8 @@ function Nav() {
   return (
     <div className="nav">
       <Link to="/home">
-        <img className='ico' src="favicon.ico" alt="" />
+        <img className="ico" src="favicon.ico" alt="" />
         <p className="nav-title">Gear Guide</p>
-
       </Link>
       <div>
         {/* If no user is logged in, show these links */}
@@ -27,13 +26,11 @@ function Nav() {
               About
             </Link>
           </>
-
         )}
 
         {/* If a user is logged in, show these links */}
         {user.id && (
           <>
-
             <Link className="navLink" to="/profile">
               Home
             </Link>
@@ -58,13 +55,11 @@ function Nav() {
               Add Gear
             </Link>   */}
 
-
             <Link className="navLink" to="/about">
               About
             </Link>
 
             <LogOutButton className="navLink" />
-
           </>
         )}
       </div>

@@ -1,45 +1,45 @@
 div {
-    text-align: center;
-    margin: 0 auto;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .GearList {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    /* position: absolute; */
-    /* left: 14%; */
-    /* top: 14%; */
-    margin-left: 15%;
-    margin-top: 4%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  /* position: absolute; */
+  /* left: 14%; */
+  /* top: 14%; */
+  margin-left: 15%;
+  margin-top: 4%;
 }
 
 .GearImg {
-    height: 200px;
-    width: auto;
-    border-radius: 15px;
+  height: 200px;
+  width: auto;
+  border-radius: 15px;
 }
 
 .GearImg:hover {
-    transform: scale(1.1);
-    transition: all .3s ease;
-    cursor: pointer;
-
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .avatar {
-    /* color:rgba(255, 255, 255, 0.87); */
-    /* margin-right: 95.5%; */
-    padding: 10px;
-    margin-top: -4%;
-    /* text-decoration:underline; */
-    /* cursor:pointer; */
+  /* color:rgba(255, 255, 255, 0.87); */
+  /* margin-right: 95.5%; */
+  padding: 10px;
+  margin-top: -4%;
+  /* text-decoration:underline; */
+  /* cursor:pointer; */
 }
 
 .addclick {
-    align-items: center;
-    width: 4%;
-    height: 100%;
-    border-radius: 15px;
-    background-color: rgba(255, 255, 255, 0.387);
+  align-items: center;
+  width: 4%;
+  height: 100%;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.387);
 }

@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createTheme,ThemeProvider } from '@material-ui/core';
-import store from './redux/store';
-import App from './components/App/App';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { createTheme, ThemeProvider } from "@material-ui/core";
+import store from "./redux/store";
+import App from "./components/App/App";
 const theme = createTheme({
   palette: {
     primary: { main: "rgb(42, 46, 71)" },
@@ -12,12 +12,11 @@ const theme = createTheme({
   },
 });
 
-
-
 ReactDOM.render(
-  <ThemeProvider theme={theme}><Provider store={store}>
-    <App />
-  </Provider></ThemeProvider>
-,
-  document.getElementById('react-root'),
+  <ThemeProvider theme={theme}>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </ThemeProvider>,
+  document.getElementById("react-root")
 );
