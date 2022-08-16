@@ -1,5 +1,8 @@
 Welcome to Gear Guide repo.
 The Gear Guide was created for musicians and gear heads to come together and build upon the knowledge base of the industry, and help upcoming musicians find the gear they love!
+
+| React | Redux | Redux Saga| Node | Express | Multer | Cloudinary | Material UI | SQL |
+
 ![Screen Shot 2022-08-05 at 20 55 37 PM](https://user-images.githubusercontent.com/98844164/183227267-2cd914d0-1649-45d2-bc4f-dea3b9170ba7.png)
 ![Screen Shot 2022-08-05 at 20 55 48 PM](https://user-images.githubusercontent.com/98844164/183227271-65cca0f1-d50b-458a-b7b4-e704d4c74f3c.png)
 ![Screen Shot 2022-08-05 at 21 00 16 PM](https://user-images.githubusercontent.com/98844164/183227406-bc7be8d5-7dac-4d18-834d-cd2d37bec884.png)
