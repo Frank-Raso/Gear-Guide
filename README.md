@@ -1,5 +1,5 @@
-Welcome to Gear Guide repo.
-The Gear Guide was created for musicians and gear heads to come together and build upon the knowledge base of the industry, and help upcoming musicians find the gear they love!
+Welcome to Gear Guide Repo.
+- Gear Guide was created for musicians and gear heads to come together and build upon the knowledge base of the industry, and help upcoming musicians find the gear they love!
 
 | React | Redux | Redux Saga| Node | Express | Multer | Cloudinary | Material UI | SQL |
 
