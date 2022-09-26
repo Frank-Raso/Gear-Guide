@@ -15,6 +15,7 @@
 }
 
 .nav-menu {
+  z-index: 1;
   background-color: #171a2904;
   backdrop-filter: blur(12px);
 

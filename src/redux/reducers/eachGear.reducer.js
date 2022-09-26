@@ -1,10 +1,11 @@
 import { combineReducers } from "redux";
 
 const eachGear = (state = [], action) => {
-  if (action.type === "EACH_GEAR") {
-    return action.payload;
-  } else {
-    return state;
+  switch (action.type) {
+    case "EACH_GEAR":
+      return action.payload;
+    default:
+      return state;
   }
 };
 export default eachGear;

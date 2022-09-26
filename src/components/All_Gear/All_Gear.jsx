@@ -13,7 +13,7 @@ function All_Gear() {
   const user = useSelector((store) => store.user);
 
   useEffect(() => {
-    dispatch({ type: "FETCH_ALLGEAR" });
+    dispatch({ type: "FETCH_ALL_GEAR" });
   }, []);
   const gearR = (id) => {
     history.push(`/gear/${id}`);

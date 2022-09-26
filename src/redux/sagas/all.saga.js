@@ -13,7 +13,7 @@ function* fetchAllGear() {
 }
 
 function* allSaga() {
-  yield takeLatest("FETCH_ALLGEAR", fetchAllGear);
+  yield takeLatest("FETCH_ALL_GEAR", fetchAllGear);
 }
 
 export default allSaga;

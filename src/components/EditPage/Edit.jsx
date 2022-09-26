@@ -129,10 +129,10 @@ function Edit() {
 
   useEffect(() => {
     console.log("in useEffect");
-    setMakeModel(gear[0].title);
-    setYear(gear[0].year);
-    setReview(gear[0].review);
-    setValue(gear[0].type_id);
+    setMakeModel(gear.title);
+    setYear(gear.year);
+    setReview(gear.review);
+    setValue(gear.type_id);
     let editImage = gear[0].image;
     setPreviewSource(editImage);
   }, []);
