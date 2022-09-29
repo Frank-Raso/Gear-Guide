@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-import "./LandingPage.css";
-import { Button } from "@material-ui/core";
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import './LandingPage.css';
+import { Button } from '@material-ui/core';
 
 // CUSTOM COMPONENTS
-import RegisterForm from "../RegisterForm/RegisterForm";
+import RegisterForm from '../RegisterForm/RegisterForm';
 
 function LandingPage() {
-  const [heading, setHeading] = useState("Welcome");
+  const [heading, setHeading] = useState('Welcome');
   const history = useHistory();
 
   const onLogin = (event) => {
-    history.push("/login");
+    history.push('/login');
   };
 
   return (

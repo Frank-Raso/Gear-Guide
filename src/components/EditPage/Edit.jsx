@@ -1,16 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
-import { useSelector } from "react-redux";
-import { useState } from "react";
-import axios from "axios";
-import "./Edit.css";
-import { useHistory, useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { TextareaAutosize, TextField } from "@material-ui/core";
-import { MenuItem } from "@material-ui/core";
-import { FormControl, Select, makeStyles } from "@material-ui/core";
-import { InputLabel } from "@material-ui/core";
-import { Button } from "@material-ui/core";
+import { useSelector } from 'react-redux';
+import { useState } from 'react';
+import axios from 'axios';
+import './Edit.css';
+import { useHistory, useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { TextareaAutosize, TextField } from '@material-ui/core';
+import { MenuItem } from '@material-ui/core';
+import { FormControl, Select, makeStyles } from '@material-ui/core';
+import { InputLabel } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -24,12 +24,12 @@ function Edit() {
   const user = useSelector((store) => store.user);
   const gear = useSelector((store) => store.eachGear);
   const [previewSource, setPreviewSource] = useState();
-  const [makeModel, setMakeModel] = useState("");
-  const [year, setYear] = useState("");
-  const [type, setType] = useState("");
-  const [review, setReview] = useState("");
-  const [img, setImg] = useState("");
-  const [value, setValue] = useState("");
+  const [makeModel, setMakeModel] = useState('');
+  const [year, setYear] = useState('');
+  const [type, setType] = useState('');
+  const [review, setReview] = useState('');
+  const [img, setImg] = useState('');
+  const [value, setValue] = useState('');
   let userImage = useSelector((store) => store.imageReducer);
   let editImage = useSelector((store) => store.imageEditReducer);
 
@@ -37,11 +37,11 @@ function Edit() {
   const classes = useStyles();
 
   const uploadImage = () => {
-    console.log("TESTING UPLOAD IMAGE", img);
+    console.log('TESTING UPLOAD IMAGE', img);
     let imageToSend = new FormData();
-    imageToSend.append("file", img);
+    imageToSend.append('file', img);
     console.log(imageToSend);
-    dispatch({ type: "SEND_EDITIMAGE", payload: imageToSend });
+    dispatch({ type: 'SEND_EDITIMAGE', payload: imageToSend });
   };
 
   const setNewUpload = () => {
@@ -50,7 +50,7 @@ function Edit() {
       id: id,
     };
     console.log(gearPost);
-    dispatch({ type: "EDIT_PUTIMAGE", payload: gearPost });
+    dispatch({ type: 'EDIT_PUTIMAGE', payload: gearPost });
   };
 
   useEffect(() => {
@@ -62,22 +62,22 @@ function Edit() {
   const handleValueChange = (event) => setValue(event.target.value);
 
   const makeIn = () => {
-    console.log("in makeIn:");
+    console.log('in makeIn:');
     setMakeModel(event.target.value);
     console.log(makeModel);
   };
   const yearIn = () => {
-    console.log("in yearIn:");
+    console.log('in yearIn:');
     setYear(event.target.value);
     console.log(year);
   };
   const reviewIn = () => {
-    console.log("in yearIn:");
+    console.log('in yearIn:');
     setReview(event.target.value);
     console.log(review);
   };
   const typeIn = () => {
-    console.log("in typeIn:");
+    console.log('in typeIn:');
     setType(event.target.value);
     console.log(type);
   };
@@ -88,15 +88,15 @@ function Edit() {
     console.log(value);
     console.log(review);
 
-    if (makeModel === "") {
-      alert("Please add Make/Model before continuing");
+    if (makeModel === '') {
+      alert('Please add Make/Model before continuing');
     }
-    if (value === "") {
-      alert("Please add Type before continuing");
-    } else if (year === "") {
-      alert("Please add Year before continuing");
-    } else if (review === "") {
-      alert("Please add Review before continuing");
+    if (value === '') {
+      alert('Please add Type before continuing');
+    } else if (year === '') {
+      alert('Please add Year before continuing');
+    } else if (review === '') {
+      alert('Please add Review before continuing');
     } else {
       let gearPost = {
         title: makeModel,
@@ -107,9 +107,9 @@ function Edit() {
         id: id,
       };
       console.log(gearPost);
-      dispatch({ type: "EDIT_GEAR", payload: gearPost });
+      dispatch({ type: 'EDIT_GEAR', payload: gearPost });
       setTimeout(function () {
-        history.push("/profile");
+        history.push('/profile');
       }, 1);
     }
   };
@@ -121,14 +121,14 @@ function Edit() {
   };
 
   useEffect(() => {
-    if (img != "") {
-      console.log("in useEffect");
+    if (img != '') {
+      console.log('in useEffect');
       uploadImage();
     }
   }, [img]);
 
   useEffect(() => {
-    console.log("in useEffect");
+    console.log('in useEffect');
     setMakeModel(gear.title);
     setYear(gear.year);
     setReview(gear.review);
@@ -162,7 +162,7 @@ function Edit() {
                 <img
                   src={previewSource}
                   alt="chosen"
-                  style={{ height: "200px" }}
+                  style={{ height: '200px' }}
                 />
               )}
             </span>
@@ -221,7 +221,7 @@ function Edit() {
             multiline
             minRows={6}
             maxRows={8}
-            style={{ width: 400, backgroundColor: "transparent" }}
+            style={{ width: 400, backgroundColor: 'transparent' }}
             variant="standard"
           />
           <br />

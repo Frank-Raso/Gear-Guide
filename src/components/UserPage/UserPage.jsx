@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
-import LogOutButton from "../LogOutButton/LogOutButton";
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-import { useHistory } from "react-router-dom";
-import "./UserPage.css";
-import { Avatar } from "@material-ui/core";
-import { Button } from "@material-ui/core";
+import React, { useEffect } from 'react';
+import LogOutButton from '../LogOutButton/LogOutButton';
+import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import './UserPage.css';
+import { Avatar } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 
 function UserPage() {
   const history = useHistory();
@@ -14,15 +14,15 @@ function UserPage() {
   const user = useSelector((store) => store.user);
 
   useEffect(() => {
-    dispatch({ type: "FETCH_GEAR" });
-    dispatch({ type: "FETCH_GEAR" });
+    dispatch({ type: 'FETCH_GEAR' });
+    dispatch({ type: 'FETCH_GEAR' });
   }, []);
 
   const gearR = (id) => {
     history.push(`/gear/${id}`);
   };
   const routeAddGear = () => {
-    history.push("/addgear");
+    history.push('/addgear');
   };
 
   return (

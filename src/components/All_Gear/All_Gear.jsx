@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import LogOutButton from "../LogOutButton/LogOutButton";
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-import { useHistory } from "react-router-dom";
-import { Avatar } from "@material-ui/core";
-import "./All_Gear.css";
+import React, { useEffect } from 'react';
+import LogOutButton from '../LogOutButton/LogOutButton';
+import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { Avatar } from '@material-ui/core';
+import './All_Gear.css';
 
 function All_Gear() {
   const history = useHistory();
@@ -13,7 +13,7 @@ function All_Gear() {
   const user = useSelector((store) => store.user);
 
   useEffect(() => {
-    dispatch({ type: "FETCH_ALL_GEAR" });
+    dispatch({ type: 'FETCH_ALL_GEAR' });
   }, []);
   const gearR = (id) => {
     history.push(`/gear/${id}`);

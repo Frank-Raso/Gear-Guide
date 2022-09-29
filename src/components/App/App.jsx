@@ -1,36 +1,36 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 import {
   HashRouter as Router,
   Redirect,
   Route,
   Switch,
-} from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import Nav from "../Nav/Nav";
-import Footer from "../Footer/Footer";
-import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-import AboutPage from "../AboutPage/AboutPage";
-import UserPage from "../UserPage/UserPage";
-import InfoPage from "../InfoPage/InfoPage";
-import LandingPage from "../LandingPage/LandingPage";
-import LoginPage from "../LoginPage/LoginPage";
-import RegisterPage from "../RegisterPage/RegisterPage";
-import AddGear from "../AddGear/AddGear";
-import All_Gear from "../All_Gear/All_Gear";
-import Guitars from "../Guitars/Guitars";
-import Amps from "../Amps/Amps";
-import Accessories from "../Accessories/Accessories";
-import Gear from "../Gear/Gear";
-import Edit from "../EditPage/Edit";
-import "./App.css";
-import SideBar from "../SideBar/SideBar";
+} from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import Nav from '../Nav/Nav';
+import Footer from '../Footer/Footer';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import AboutPage from '../AboutPage/AboutPage';
+import UserPage from '../UserPage/UserPage';
+import InfoPage from '../InfoPage/InfoPage';
+import LandingPage from '../LandingPage/LandingPage';
+import LoginPage from '../LoginPage/LoginPage';
+import RegisterPage from '../RegisterPage/RegisterPage';
+import AddGear from '../AddGear/AddGear';
+import All_Gear from '../All_Gear/All_Gear';
+import Guitars from '../Guitars/Guitars';
+import Amps from '../Amps/Amps';
+import Accessories from '../Accessories/Accessories';
+import Gear from '../Gear/Gear';
+import Edit from '../EditPage/Edit';
+import './App.css';
+import SideBar from '../SideBar/SideBar';
 
 function App() {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
 
   useEffect(() => {
-    dispatch({ type: "FETCH_USER" });
+    dispatch({ type: 'FETCH_USER' });
   }, [dispatch]);
 
   return (
