@@ -10,7 +10,7 @@ import "./AboutPage.css";
 
 function AboutPage() {
   const [imageIDs, setImageIDs] = useState();
-  const gogit = () => {
+  const goGit = () => {
     window.location = "https://github.com/Frank-Raso/";
   };
   const goLinkedIn = () => {
@@ -61,7 +61,7 @@ function AboutPage() {
       <h4>About the Creator:</h4>
       <h5>Frank Raso</h5>
       <p className="aboutText">
-        <BsIcons.BsGithub className="personals" onClick={gogit} />
+        <BsIcons.BsGithub className="personals" onClick={goGit} />
         <FaIcons.FaLinkedin className="personals" onClick={goLinkedIn} />
       </p>
     </div>
