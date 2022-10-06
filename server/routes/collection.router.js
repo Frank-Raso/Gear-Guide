@@ -4,10 +4,10 @@ const router = express.Router();
 const pool = require("../modules/pool");
 
 
-router.get("/", (req, res) => {
-    console.log("in /collection GET", req.params.id);
+router.get("/:id", (req, res) => {
+    console.log("in collection GET", req.params.id);
     let queryString = `SELECT * FROM "gear" WHERE "user_id" = $1;`;
-    const values = [req.user.id];
+    const values = [req.params.id];
 
     pool
       .query(queryString, values)

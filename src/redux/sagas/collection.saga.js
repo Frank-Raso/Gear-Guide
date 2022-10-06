@@ -1,10 +1,9 @@
 import { put, takeLatest } from "redux-saga/effects";
 import axios from "axios";
 
-function* fetchCollection() {
+function* fetchCollection(action) {
   try {
-    const gear = yield axios.get("/api/collection");
-    console.log("get collection:", gear.data);
+    const gear = yield axios.get(`/api/collection/${action.payload}`);
     yield put({ type: "SET_COLLECTION", payload: gear.data });
   } catch {
     console.log("get collection error");
