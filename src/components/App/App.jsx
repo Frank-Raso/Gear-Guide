@@ -22,6 +22,7 @@ import Amps from '../Amps/Amps';
 import Accessories from '../Accessories/Accessories';
 import Gear from '../Gear/Gear';
 import Edit from '../EditPage/Edit';
+import Collection from '../Collection/Collection';
 import './App.css';
 import SideBar from '../SideBar/SideBar';
 
@@ -83,6 +84,15 @@ function App() {
           <ProtectedRoute exact path="/all">
             <All_Gear />
           </ProtectedRoute>
+
+
+          <ProtectedRoute exact path="/collection/:id">
+            <Collection />
+          </ProtectedRoute>
+
+
+
+
 
           <ProtectedRoute exact path="/guitars">
             <Guitars />

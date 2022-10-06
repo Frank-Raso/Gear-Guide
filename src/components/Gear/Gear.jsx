@@ -88,6 +88,12 @@ function Gear() {
     }
   };
 
+  const gearProfile = () => {
+    console.log(`this is what we are sending to the server:`, gear.user_id);
+    dispatch({ type: 'FETCH_COLLECTION', payload: gear.user_id });
+    history.push(`/collection/${gear.user_id}`);
+  };
+
   return (
     <div className="gear_page">
       {gear == undefined ? (
@@ -96,6 +102,7 @@ function Gear() {
         </div>
       ) : (
         <div className="card">
+          <Avatar className="avatar2" onClick={gearProfile} >{gear.user_id[0]}</Avatar>
           <img className="arrowL" src="left-arrow.png" onClick={minusOne} />
           <img className="arrowR" src="right-arrow.png" onClick={plusOne} />
           <h2>{gear.title}</h2>

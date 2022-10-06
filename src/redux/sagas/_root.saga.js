@@ -13,6 +13,7 @@ import editSaga from "./edit.saga";
 import uploadImageSaga from "./image.saga";
 import sendEditImageSaga from "./imageEdit.saga";
 import editPutImageSaga from "./editPutImage.saga";
+import collectionSaga from "./collection.saga";
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -37,5 +38,6 @@ export default function* rootSaga() {
     uploadImageSaga(),
     sendEditImageSaga(),
     editPutImageSaga(),
+    collectionSaga(),
   ]);
 }

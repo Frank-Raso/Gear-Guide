@@ -6,7 +6,6 @@ function* deleteGear(action) {
   try {
     const response = yield axios.delete(`api/profile/gear/${action.payload}`);
     console.log("deleteGear:", response.data);
-    // yield put({ type: 'EACH_GEAR', payload: response.data });
   } catch {
     console.log("err cannot get GEAR");
   }

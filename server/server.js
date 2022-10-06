@@ -19,6 +19,7 @@ const editGearRouter = require("./routes/editGear.router.js");
 const uploadImageRouter = require("./routes/uploadImage.router.js");
 const uploadEditImageRouter = require("./routes/uploadEditImage.router.js");
 const editPutImageRouter = require("./routes/editPutImage.router.js");
+const collectionRouter = require("./routes/collection.router.js");
 // Body parser middleware
 
 // app.use(bodyParser.json());
@@ -44,6 +45,7 @@ app.use("/api/edit", editGearRouter);
 app.use("/api/uploadImage", uploadImageRouter);
 app.use("/api/uploadEditImage", uploadEditImageRouter);
 app.use("/api/edit/putimage", editPutImageRouter);
+app.use("/api/collection", collectionRouter);
 
 app.get("/api/images", async (req, res) => {
   const { resources } = await cloudinary.search
