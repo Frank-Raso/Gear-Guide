@@ -89,7 +89,6 @@ function Gear() {
   };
 
   const gearProfile = () => {
-    console.log(`this is what we are sending to the server:`, gear.user_id);
     dispatch({ type: 'FETCH_COLLECTION', payload: gear.user_id });
     history.push(`/collection/${gear.user_id}`);
   };

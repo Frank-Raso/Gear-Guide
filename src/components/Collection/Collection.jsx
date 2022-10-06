@@ -15,7 +15,6 @@ function Collection() {
   useEffect(() => {
 
     dispatch({ type: 'FETCH_COLLECTION', payload: id });
-    console.log(`this is the id:`,id);
   }, []);
 
   const gearR = (id) => {
