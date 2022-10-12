@@ -56,7 +56,7 @@ function Edit() {
   useEffect(() => {
     if (editImage.length != 0) {
       setNewUpload();
-      dispatch({ type: 'CLEAR_EDITIMAGE' });
+            dispatch({ type: 'CLEAR_EDITIMAGE' });
     }
   }, [editImage]);
 
