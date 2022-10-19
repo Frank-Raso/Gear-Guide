@@ -13,7 +13,6 @@ function Collection() {
   let { id } = useParams();
 
   useEffect(() => {
-
     dispatch({ type: 'FETCH_COLLECTION', payload: id });
   }, []);
 
@@ -22,8 +21,15 @@ function Collection() {
   };
 
   return (
+
     <div className="container">
-      <h2>- Collection -</h2>
+        {gear == 0 ? (
+        <div>
+          <h1 className="spinner"></h1>
+        </div>
+      ) : (
+        <div>
+      <h2> {gear[0].user_name}s' Collection</h2>
       <div className="AllGearList">
         {gear.map((eachGear) => {
           return (
@@ -46,7 +52,8 @@ function Collection() {
           );
         })}
       </div>
-
+      </div>
+)}
     </div>
   );
 }
