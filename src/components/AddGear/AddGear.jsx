@@ -86,6 +86,7 @@ function AddReview() {
         review: review,
         image: userImage,
         user_id: user.id,
+        user_name: user.username,
       };
       axios
         .post('/api/AddGear', gearPost)

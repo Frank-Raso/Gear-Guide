@@ -5,7 +5,7 @@ const pool = require("../modules/pool");
 
 router.post("/", (req, res) => {
   console.log(req.body);
-  let queryString = `INSERT INTO "gear" ("title", "review", "year", "user_id", "type_id", "image") VALUES ($1, $2, $3, $4, $5, $6);`;
+  let queryString = `INSERT INTO "gear" ("title", "review", "year", "user_id", "type_id", "image", "user_name") VALUES ($1, $2, $3, $4, $5, $6, $7);`;
   let values = [
     req.body.title,
     req.body.review,
@@ -13,6 +13,7 @@ router.post("/", (req, res) => {
     req.body.user_id,
     req.body.type_id,
     req.body.image,
+    req.body.user_name,
   ];
   pool
     .query(queryString, values)
