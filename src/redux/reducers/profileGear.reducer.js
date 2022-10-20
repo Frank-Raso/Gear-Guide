@@ -1,8 +1,8 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
 const profileGear = (state = [], action) => {
   switch (action.type) {
-    case "SET_PGEAR":
+    case 'SET_PGEAR':
       return action.payload;
     default:
       return state;

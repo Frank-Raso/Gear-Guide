@@ -6,8 +6,8 @@ div {
 .GearList {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
   /* position: absolute; */
   /* left: 14%; */
   /* top: 14%; */

@@ -15,7 +15,6 @@ function UserPage() {
 
   useEffect(() => {
     dispatch({ type: 'FETCH_GEAR' });
-
   }, []);
 
   const gearR = (id) => {

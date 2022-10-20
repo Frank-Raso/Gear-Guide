@@ -1,9 +1,9 @@
-const { query } = require("express");
-const express = require("express");
+const { query } = require('express');
+const express = require('express');
 const router = express.Router();
-const pool = require("../modules/pool");
+const pool = require('../modules/pool');
 
-router.post("/", (req, res) => {
+router.post('/', (req, res) => {
   console.log(req.body);
   let queryString = `INSERT INTO "gear" ("title", "review", "year", "user_id", "type_id", "image", "user_name") VALUES ($1, $2, $3, $4, $5, $6, $7);`;
   let values = [
