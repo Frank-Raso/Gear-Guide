@@ -1,9 +1,9 @@
-const { query } = require("express");
-const express = require("express");
+const { query } = require('express');
+const express = require('express');
 const router = express.Router();
-const pool = require("../modules/pool");
+const pool = require('../modules/pool');
 
-router.put("/", (req, res) => {
+router.put('/', (req, res) => {
   console.log(req.body);
   const queryString = `UPDATE "gear" SET "title"=$1, "review"=$2, "year"=$3, "user_id"=$4, "type_id"=$5 WHERE id=$6;`;
   const values = [

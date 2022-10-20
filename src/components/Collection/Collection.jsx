@@ -20,25 +20,23 @@ function Collection() {
     history.push(`/gear/${id}`);
   };
 
-
   const followBtn = () => {
     console.log('followBtn');
-    if(user.id == gear[0].user_id){
+    if (user.id == gear[0].user_id) {
       console.log(`cant follow yourself`);
-    }else{
+    } else {
       return (
         <div>
-          <Button variant="contained" color="primary" onClick={followAction} >
+          <Button variant="contained" color="primary" onClick={followAction}>
             Follow Me
           </Button>
         </div>
       );
     }
-
-  }
-const followAction = () => {
-  console.log(`you are now following ${gear[0].user_name}`);
-}
+  };
+  const followAction = () => {
+    console.log(`you are now following ${gear[0].user_name}`);
+  };
 
   return (
     <div className="container">

@@ -85,14 +85,9 @@ function App() {
             <All_Gear />
           </ProtectedRoute>
 
-
           <ProtectedRoute exact path="/collection/:id">
             <Collection />
           </ProtectedRoute>
-
-
-
-
 
           <ProtectedRoute exact path="/guitars">
             <Guitars />

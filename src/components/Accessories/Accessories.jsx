@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import LogOutButton from "../LogOutButton/LogOutButton";
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-import { useHistory } from "react-router-dom";
-import { Avatar } from "@material-ui/core";
-import "./Accessories.css";
+import React, { useEffect } from 'react';
+import LogOutButton from '../LogOutButton/LogOutButton';
+import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { Avatar } from '@material-ui/core';
+import './Accessories.css';
 function Accessories() {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -12,7 +12,7 @@ function Accessories() {
   const user = useSelector((store) => store.user);
 
   useEffect(() => {
-    dispatch({ type: "FETCH_ACCESSORIES" });
+    dispatch({ type: 'FETCH_ACCESSORIES' });
   }, []);
   const gearR = (id) => {
     history.push(`/gear/${id}`);

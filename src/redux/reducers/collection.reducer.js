@@ -1,8 +1,8 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
 const collection = (state = [], action) => {
   switch (action.type) {
-    case "SET_COLLECTION":
+    case 'SET_COLLECTION':
       return action.payload;
     default:
       return state;

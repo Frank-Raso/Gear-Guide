@@ -1,25 +1,25 @@
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
-import { Image } from "cloudinary-react";
-import { Link } from "react-router-dom";
-import * as BsIcons from "react-icons/bs";
-import * as FaIcons from "react-icons/fa";
+import React from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { Image } from 'cloudinary-react';
+import { Link } from 'react-router-dom';
+import * as BsIcons from 'react-icons/bs';
+import * as FaIcons from 'react-icons/fa';
 
-import "./AboutPage.css";
+import './AboutPage.css';
 
 function AboutPage() {
   const [imageIDs, setImageIDs] = useState();
   const goGit = () => {
-    window.location = "https://github.com/Frank-Raso/";
+    window.location = 'https://github.com/Frank-Raso/';
   };
   const goLinkedIn = () => {
-    window.location = " https://www.linkedin.com/in/frankraso/";
+    window.location = ' https://www.linkedin.com/in/frankraso/';
   };
 
   const loadImages = async () => {
     try {
-      const res = await fetch("/api/images");
+      const res = await fetch('/api/images');
       const data = await res.json();
       console.log(data);
       setImageIDs(data);
@@ -38,7 +38,7 @@ function AboutPage() {
       <p className="aboutText">
         The Gear Guide was created for musicians and gear heads to come together
         and build upon the knowledge base of the industry, and to help upcoming
-        musicians find the gear they love!{" "}
+        musicians find the gear they love!{' '}
       </p>
       <div>
         <br />
@@ -54,9 +54,9 @@ function AboutPage() {
       </div>
       <p>This Site Utilizes</p>
       <p>
-        {" "}
+        {' '}
         | React | Redux | Redux Saga| Node | Express | Multer | Cloudinary |
-        Material UI | SQL |{" "}
+        Material UI | SQL |{' '}
       </p>
       <h4>About the Creator:</h4>
       <h5>Frank Raso</h5>

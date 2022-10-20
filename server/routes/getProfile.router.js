@@ -1,10 +1,10 @@
-const { query } = require("express");
-const express = require("express");
+const { query } = require('express');
+const express = require('express');
 const router = express.Router();
-const pool = require("../modules/pool");
+const pool = require('../modules/pool');
 
-router.get("/", (req, res) => {
-  console.log("in /profile GET");
+router.get('/', (req, res) => {
+  console.log('in /profile GET');
   let queryString = `SELECT * FROM "gear" WHERE "user_id" = $1;`;
   let values = [req.user.id];
   pool
@@ -18,7 +18,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/gear/:id", (req, res) => {
+router.get('/gear/:id', (req, res) => {
   console.log(req.params);
   const queryString = `SELECT * FROM "gear" WHERE gear.id = $1;`;
   const values = [req.params.id];
@@ -33,7 +33,7 @@ router.get("/gear/:id", (req, res) => {
     });
 });
 
-router.delete("/gear/:id", (req, res) => {
+router.delete('/gear/:id', (req, res) => {
   console.log(req.params);
   const queryString = `DELETE FROM "gear" WHERE gear.id = $1;`;
   const values = [req.params.id];

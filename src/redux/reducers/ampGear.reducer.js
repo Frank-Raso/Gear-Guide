@@ -1,8 +1,8 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
 const ampGear = (state = [], action) => {
   switch (action.type) {
-    case "SET_AMPS":
+    case 'SET_AMPS':
       return action.payload;
     default:
       return state;

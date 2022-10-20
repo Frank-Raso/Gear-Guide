@@ -6,8 +6,8 @@ div {
 .GuitarList {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
   margin: auto;
   margin-top: 4%;
   margin-left: 15%;

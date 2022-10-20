@@ -101,7 +101,9 @@ function Gear() {
         </div>
       ) : (
         <div className="card">
-          <Avatar className="avatar2" onClick={gearProfile} >{gear.user_name[0]}</Avatar>
+          <Avatar className="avatar2" onClick={gearProfile}>
+            {gear.user_name[0]}
+          </Avatar>
           <img className="arrowL" src="left-arrow.png" onClick={minusOne} />
           <img className="arrowR" src="right-arrow.png" onClick={plusOne} />
           <h2>{gear.title}</h2>
