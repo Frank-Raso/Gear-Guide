@@ -28,7 +28,7 @@ function Collection() {
       return (
         <div>
           <Button variant="contained" color="primary" onClick={followAction}>
-            Follow Me
+            Follow {gear[0].user_name}
           </Button>
         </div>
       );
