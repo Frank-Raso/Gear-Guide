@@ -24,11 +24,31 @@ function UserPage() {
     history.push('/addgear');
   };
 
+  const gearLess = () => {
+    console.log('gearLess');
+    if (gear.length < 1) {
+      return (
+        <div>
+          <p className="gearless">
+            {user.username} has no gear yet! Click on the + below to add some
+            gear
+          </p>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <p>{user.username}'s Gear</p>
+        </div>
+      );
+    }
+  };
+
   return (
     <div className="container">
       <Avatar className="avatar">{user.username[0]}</Avatar>
       <p>{user.username}'s Gear</p>
-
+      <div>{gearLess()}</div>
       <div className="GearList">
         {gear.map((eachGear) => {
           return (
