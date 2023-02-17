@@ -47,7 +47,6 @@ function UserPage() {
   return (
     <div className="container">
       <Avatar className="avatar">{user.username[0]}</Avatar>
-      <p>{user.username}'s Gear</p>
       <div>{gearLess()}</div>
       <div className="GearList">
         {gear.map((eachGear) => {
