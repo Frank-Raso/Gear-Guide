@@ -19,10 +19,10 @@ function LandingPage() {
       <div className="grid">
         <div>
           <p className="text">
-            Welcome to The Gear Guide!
+            Welcome to Gear Guide!
             <br />
             <br />
-            The Gear Guide was created for musicians and gear heads to come
+            Gear Guide was created for musicians and gear heads to come
             together and build upon the knowledge base of the industry, and to
             help upcoming musicians find the gear they love!
           </p>
