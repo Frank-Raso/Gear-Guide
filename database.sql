@@ -16,5 +16,6 @@ CREATE TABLE "gear" (
 "year" VARCHAR(10),
 "image"VARCHAR(1000),
 "user_id" INTEGER REFERENCES "user",
-"type_id" VARCHAR(25)
+"type_id" VARCHAR(25),
+"user_name" VARCHAR(80)
 );
