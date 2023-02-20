@@ -12,6 +12,7 @@ function Gear() {
   const dispatch = useDispatch();
   const allGear = useSelector((store) => store.allGear);
   const [gear, setGear] = useState(undefined);
+  const [rock, setRock] = useState(undefined);
   let { id } = useParams();
 
   useEffect(() => {
@@ -53,6 +54,14 @@ function Gear() {
     }
   };
 
+  const rockControl = () => {
+    console.log('rocka');
+    setRock(true);
+    if (rock == true) {
+      setRock(false);
+    }
+  };
+
   const whereTheSidewalkEnds = () => {
     history.push('/profile');
   };
@@ -88,6 +97,22 @@ function Gear() {
     }
   };
 
+  const doesItRock = () => {
+    if (rock == true) {
+      return (
+        <div>
+          <img className="rock" src="rock_rock.png" onClick={rockControl} />
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <img className="rock" src="not_rock.png" onClick={rockControl} />
+        </div>
+      );
+    }
+  };
+
   const gearProfile = () => {
     dispatch({ type: 'FETCH_COLLECTION', payload: gear.user_id });
     history.push(`/collection/${gear.user_id}`);
@@ -110,6 +135,7 @@ function Gear() {
           <h3>{gear.year}</h3>
           <img className="gearImg" src={gear.image} alt="" />
           <p>{gear.review}</p>
+          <div>{doesItRock()}</div>
           <div>{upDel()}</div>
         </div>
       )}
