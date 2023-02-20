@@ -55,11 +55,15 @@ function Gear() {
   };
 
   const rockControl = () => {
-      setRock(true);
-    console.log('ToDO: Create dispatch for rock');
     if (rock == true) {
       setRock(false);
-    console.log('ToDO: Create dispatch for rock');
+      dispatch({ type: 'ROCK', payload: false });
+      console.log('rock is false')
+    } else {
+      setRock(true);
+      dispatch({ type: 'ROCK', payload: true });
+      console.log('rock is true')
+   
     }
   };
 
