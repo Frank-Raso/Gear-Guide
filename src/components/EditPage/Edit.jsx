@@ -62,22 +62,22 @@ function Edit() {
 
   const handleValueChange = (event) => setValue(event.target.value);
 
-  const makeIn = () => {
+  const makeIn = (event) => {
     console.log('in makeIn:');
     setMakeModel(event.target.value);
     console.log(makeModel);
   };
-  const yearIn = () => {
+  const yearIn = (event) => {
     console.log('in yearIn:');
     setYear(event.target.value);
     console.log(year);
   };
-  const reviewIn = () => {
+  const reviewIn = (event) => {
     console.log('in yearIn:');
     setReview(event.target.value);
     console.log(review);
   };
-  const typeIn = () => {
+  const typeIn = (event) => {
     console.log('in typeIn:');
     setType(event.target.value);
     console.log(type);

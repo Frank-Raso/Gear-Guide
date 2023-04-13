@@ -141,7 +141,7 @@ function Gear() {
           <img className="gearImg" src={gear.image} alt="" />
           <p>{gear.review}</p>
           <div>{doesItRock()}</div>
-          <div>{upDel()}</div>
+          <div className="buttons-container">{upDel()}</div>
         </div>
       )}
     </div>

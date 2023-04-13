@@ -60,11 +60,19 @@
   cursor: pointer;
 }
 
+.buttons-container {
+  position: relative;
+  z-index: 1;
+}
+
 .gearImg:active {
   transform: scale(2.2);
   transition: all 0.4s ease;
   cursor: pointer;
+  position: relative;
+  z-index: 1000;
 }
+
 
 .arrowR {
   cursor: pointer;
