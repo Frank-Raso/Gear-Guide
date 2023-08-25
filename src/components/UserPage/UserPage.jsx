@@ -12,9 +12,12 @@ function UserPage() {
   const dispatch = useDispatch();
   const gear = useSelector((store) => store.profileGear);
   const user = useSelector((store) => store.user);
+  const allFollowers = useSelector((store) => store.allFollowers);
+
 
   useEffect(() => {
     dispatch({ type: 'FETCH_GEAR' });
+    dispatch({ type: 'FETCH_FOLLOWERS' });
   }, []);
 
   const gearR = (id) => {

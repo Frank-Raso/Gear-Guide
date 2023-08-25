@@ -20,6 +20,11 @@ const uploadImageRouter = require('./routes/uploadImage.router.js');
 const uploadEditImageRouter = require('./routes/uploadEditImage.router.js');
 const editPutImageRouter = require('./routes/editPutImage.router.js');
 const collectionRouter = require('./routes/collection.router.js');
+const rocksRouter = require('./routes/rocks.router.js');
+const allRocksRouter = require('./routes/allRocks.router.js');
+const followInfluencerRouter = require('./routes/followInfluencer.router.js');
+const followAllInfluencerRouter = require('./routes/followAllInfluencer.router.js');
+const unFollowInfluencerRouter = require('./routes/unFollowInfluencer.router.js');
 // Body parser middleware
 
 // app.use(bodyParser.json());
@@ -44,8 +49,13 @@ app.use('/api/accessories', getAccessoriesRouter);
 app.use('/api/edit', editGearRouter);
 app.use('/api/uploadImage', uploadImageRouter);
 app.use('/api/uploadEditImage', uploadEditImageRouter);
-app.use('/api/edit/putimage', editPutImageRouter);
+app.use('/api/edit/putImage', editPutImageRouter);
 app.use('/api/collection', collectionRouter);
+app.use('/api/rocks', rocksRouter);
+app.use('/api/rocks/all', allRocksRouter);
+app.use('/api/follow', followInfluencerRouter);
+app.use('/api/follow/all', followAllInfluencerRouter);
+app.use('/api/unFollow', unFollowInfluencerRouter);
 
 app.get('/api/images', async (req, res) => {
   const { resources } = await cloudinary.search

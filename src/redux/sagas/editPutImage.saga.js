@@ -4,7 +4,7 @@ import axios from 'axios';
 function* editPutImage(action) {
   console.log('in editGear', action.payload);
   try {
-    const response = yield axios.put('api/edit/putimage', action.payload);
+    const response = yield axios.put('api/edit/putImage', action.payload);
     console.log('editGear:', response);
   } catch {
     console.log('err cannot edit .put GEAR');

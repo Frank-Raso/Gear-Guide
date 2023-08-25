@@ -5,8 +5,11 @@ import { Button } from '@material-ui/core';
 import './Gear.css';
 import { Avatar } from '@material-ui/core';
 import { useState } from 'react';
+import allRocks from '../../redux/reducers/allRocks.reducer';
 
 function Gear() {
+  const likes = useSelector((store) => store.allRocks);
+  const rocks = useSelector((store) => store.rocks);
   const user = useSelector((store) => store.user);
   const history = useHistory();
   const dispatch = useDispatch();
@@ -19,6 +22,7 @@ function Gear() {
     console.log(id);
     dispatch({ type: 'GEAR_CONT', payload: id });
     dispatch({ type: 'FETCH_ALL_GEAR' });
+    dispatch({ type: 'FETCH_ROCKS' });
   }, []);
 
   useEffect(() => {
@@ -54,21 +58,34 @@ function Gear() {
     }
   };
 
-  const rockControl = () => {
-    if (rock == true) {
-      setRock(false);
-      dispatch({ type: 'ROCK', payload: false });
-      console.log('rock is false')
-    } else {
-      setRock(true);
-      dispatch({ type: 'ROCK', payload: true });
-      console.log('rock is true')
-   
+  const doesItRock = () => {
+    for (let i = 0; i < likes.length; i++) {
+      if (likes[i].user_id === user.id && likes[i].gear_id === gear.id) {
+        console.log('Found a match!');
+        return <img className="rock" src="rock_rock.png" onClick={unlike} />;
+      }
     }
+    console.log('No match found!');
+    return <img className="rock" src="not_rock.png" onClick={like} />;
   };
 
-  const whereTheSidewalkEnds = () => {
-    history.push('/profile');
+  const like = () => {
+    console.log('like');
+    const payload = {
+      user_id: user.id,
+      gear_id: gear.id,
+    };
+    dispatch({ type: 'ROCKS', payload: payload });
+  };
+
+  const unlike = () => {
+    //not yet working still needs saga and server side/routers
+    console.log('unlike');
+    const payload = {
+      user_id: user.id,
+      gear_id: gear.id,
+    };
+    dispatch({ type: 'NOT_ROCKS', payload: payload });
   };
 
   const delete_Gear = async () => {
@@ -97,22 +114,6 @@ function Gear() {
           <Button variant="contained" color="primary" onClick={editGear}>
             Edit
           </Button>
-        </div>
-      );
-    }
-  };
-
-  const doesItRock = () => {
-    if (rock == true) {
-      return (
-        <div>
-          <img className="rock" src="rock_rock.png" onClick={rockControl} />
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <img className="rock" src="not_rock.png" onClick={rockControl} />
         </div>
       );
     }
