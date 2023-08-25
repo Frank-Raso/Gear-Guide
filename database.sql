@@ -3,7 +3,7 @@
 -- -- You must use double quotes in every query that user is in:
 -- -- ex. SELECT * FROM "user";
 -- -- Otherwise you will have errors!
-
+-- database name: gear_guide can be found and changed at server/modules/pool.js Line 33 -> "database: 'gear_guide' ""
 
 CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
