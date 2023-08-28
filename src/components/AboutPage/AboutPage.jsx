@@ -56,7 +56,7 @@ function AboutPage() {
       <p>
         {' '}
         | React | Redux | Redux Saga| Node | Express | Multer | Cloudinary |
-        Material UI | SQL |{' '}
+        Material UI | PostgreSQL |{' '}
       </p>
       <h4>About the Creator:</h4>
       <h5>Frank Raso</h5>

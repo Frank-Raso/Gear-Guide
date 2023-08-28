@@ -25,6 +25,8 @@ const allRocksRouter = require('./routes/allRocks.router.js');
 const followInfluencerRouter = require('./routes/followInfluencer.router.js');
 const followAllInfluencerRouter = require('./routes/followAllInfluencer.router.js');
 const unFollowInfluencerRouter = require('./routes/unFollowInfluencer.router.js');
+const unLikeRouter = require('./routes/unLike.router.js');
+
 // Body parser middleware
 
 // app.use(bodyParser.json());
@@ -52,6 +54,7 @@ app.use('/api/uploadEditImage', uploadEditImageRouter);
 app.use('/api/edit/putImage', editPutImageRouter);
 app.use('/api/collection', collectionRouter);
 app.use('/api/rocks', rocksRouter);
+app.use('/api/unLike', unLikeRouter);
 app.use('/api/rocks/all', allRocksRouter);
 app.use('/api/follow', followInfluencerRouter);
 app.use('/api/follow/all', followAllInfluencerRouter);

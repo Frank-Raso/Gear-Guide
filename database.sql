@@ -5,9 +5,12 @@
 -- -- Otherwise you will have errors!
 -- database name: gear_guide can be found and changed at server/modules/pool.js Line 33 -> "database: 'gear_guide' ""
 
+CREATE EXTENSION IF NOT EXISTS citext;
+-- Create the user table with username as citext for case-insensitive comparisons
+
 CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
-    "username" VARCHAR (80) UNIQUE NOT NULL,
+    "username" citext UNIQUE NOT NULL,
     "password" VARCHAR (1000) NOT NULL
 );
 

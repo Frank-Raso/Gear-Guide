@@ -1,0 +1,27 @@
+div {
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .GuitarList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+      'Lucida Sans', Arial, sans-serif;
+    margin: auto;
+    margin-top: 4%;
+    /* margin-left: 15%; */
+  }
+  
+  .GuitarImg {
+    height: 200px;
+    width: auto;
+    border-radius: 15px;
+  }
+  
+  .GuitarImg:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  

@@ -25,6 +25,8 @@ import Edit from '../EditPage/Edit';
 import Collection from '../Collection/Collection';
 import './App.css';
 import SideBar from '../SideBar/SideBar';
+import Liked from '../Liked/Liked';
+import Following from '../Following/Following';
 
 function App() {
   const dispatch = useDispatch();
@@ -92,9 +94,19 @@ function App() {
           <ProtectedRoute exact path="/guitars">
             <Guitars />
           </ProtectedRoute>
+
           <ProtectedRoute exact path="/amps">
             <Amps />
           </ProtectedRoute>
+
+         <ProtectedRoute exact path="/liked">
+            <Liked />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/following">
+            <Following />
+          </ProtectedRoute>
+
           <ProtectedRoute exact path="/Accessories">
             <Accessories />
           </ProtectedRoute>

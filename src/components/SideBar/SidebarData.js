@@ -41,4 +41,16 @@ export const SidebarData = [
     icon: <FaIcons.FaPlus />,
     cName: 'nav-text',
   },
+  {
+    title: 'Following',
+    path: '/following',
+    icon: <FaIcons.FaPlus />,
+    cName: 'nav-text',
+  },
+  {
+    title: 'Liked',
+    path: '/liked',
+    icon: <FaIcons.FaPlus />,
+    cName: 'nav-text',
+  },
 ];

@@ -74,6 +74,6 @@
   align-items: center;
 }
 
-span {
+.spacer {
   margin-left: 16px;
-}
+};

@@ -16,6 +16,7 @@ function UserPage() {
 
 
   useEffect(() => {
+    dispatch({ type: 'FETCH_ROCKS' });
     dispatch({ type: 'FETCH_GEAR' });
     dispatch({ type: 'FETCH_FOLLOWERS' });
   }, []);

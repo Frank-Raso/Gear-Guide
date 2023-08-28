@@ -3,22 +3,23 @@ div {
   margin: 0 auto;
 }
 
-.AmpList {
+.List {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
   margin: auto;
   margin-top: 4%;
   /* margin-left: 15%; */
 }
 
-.AmpImg {
+.GuitarImg {
   height: 200px;
   width: auto;
   border-radius: 15px;
 }
 
-.AmpImg:hover {
+.GuitarImg:hover {
   transform: scale(1.1);
   transition: all 0.3s ease;
   cursor: pointer;

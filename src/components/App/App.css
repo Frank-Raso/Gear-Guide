@@ -68,7 +68,7 @@ Button
 
 .btn:hover {
   background-color: #3e3f3f;
-  text-decoration: none;
+  text-decoration: none;;
 }
 
 /* This line makes the "Register" and "Login" buttons look like links */
