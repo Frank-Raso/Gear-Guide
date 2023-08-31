@@ -89,7 +89,7 @@ function Collection() {
       ) : (
         <div>
           <h2> {gear[0].user_name}s' Collection</h2>
-          <p>{followBtn()}</p>
+          <div>{followBtn()}</div>
           <div className="AllGearList">
             {gear.map((eachGear) => {
               return (

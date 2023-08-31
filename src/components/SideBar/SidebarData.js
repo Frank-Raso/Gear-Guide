@@ -3,6 +3,7 @@ import * as FaIcons from 'react-icons/fa';
 import * as GiIcons from 'react-icons/gi';
 import * as BsIcons from 'react-icons/bs';
 import * as MuIcons from 'react-icons/md';
+import * as TbIcons from 'react-icons/tb';
 
 export const SidebarData = [
   {
@@ -36,20 +37,20 @@ export const SidebarData = [
     cName: 'nav-text',
   },
   {
-    title: 'Add Gear',
-    path: '/addgear',
-    icon: <FaIcons.FaPlus />,
-    cName: 'nav-text',
-  },
-  {
     title: 'Following',
     path: '/following',
-    icon: <FaIcons.FaPlus />,
+    icon: <FaIcons.FaRegEye/>,
     cName: 'nav-text',
   },
   {
     title: 'Liked',
     path: '/liked',
+    icon: <TbIcons.TbHandRock />,
+    cName: 'nav-text',
+  },
+  {
+    title: 'Add Gear',
+    path: '/addgear',
     icon: <FaIcons.FaPlus />,
     cName: 'nav-text',
   },

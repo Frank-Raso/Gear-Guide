@@ -26,3 +26,9 @@
   width: 10%;
   height: 100%;
 }
+
+.personals:hover {
+  transform: scale(1.1);
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
