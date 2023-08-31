@@ -14,11 +14,11 @@ function UserPage() {
   const user = useSelector((store) => store.user);
   const allFollowers = useSelector((store) => store.allFollowers);
 
-
   useEffect(() => {
     dispatch({ type: 'FETCH_ROCKS' });
     dispatch({ type: 'FETCH_GEAR' });
     dispatch({ type: 'FETCH_FOLLOWERS' });
+    dispatch({ type: 'FETCH_ALL_GEAR' });
   }, []);
 
   const gearR = (id) => {

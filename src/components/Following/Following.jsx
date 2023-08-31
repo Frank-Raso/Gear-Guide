@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
+import './Following.css';
 
 function Following() {
   const history = useHistory();
@@ -28,6 +29,8 @@ function Following() {
   useEffect(() => {
     dispatch({ type: 'FETCH_GEAR' });
     dispatch({ type: 'FETCH_FOLLOWERS' });
+    dispatch({ type: 'FETCH_ROCKS' });
+    dispatch({ type: 'FETCH_ALL_GEAR' });
   }, []);
 
   useEffect(() => {
@@ -35,26 +38,26 @@ function Following() {
   }, [following]);
 
   return (
-    <div>
+    <div className="followingContainer">
       {currentUserFollowing.length === 0 ? (
         <div>
           <h2>{user.username} is not following anyone yet!</h2>
         </div>
       ) : (
-        <div className="container">
+        <div>
           <h2>{user.username} is Following:</h2>
-          <div className="GuitarList">
+          <div className="followingList">
             {followedUserNames.map((userName, index) => (
               <p
-                onClick={() =>
-                  history.push(
-                    `/collection/${currentUserFollowing[index].followee_id}`
-                  )
-                }
-                key={index}
-              >
-                <Avatar>{userName[0]}</Avatar> {userName}
-              </p>
+              onClick={() =>
+                history.push(
+                  `/collection/${currentUserFollowing[index].followee_id}`
+                )
+              }
+              key={index}
+            >
+              <Avatar className='followingAvatar'>{userName[0]}</Avatar> {userName}
+            </p>
             ))}
           </div>
         </div>

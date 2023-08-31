@@ -59,6 +59,9 @@ function Gear() {
   };
 
   const doesItRock = () => {
+    if (user.id === gear.user_id) {
+      return;
+    }
     for (let i = 0; i < likes.length; i++) {
       if (likes[i].user_id === user.id && likes[i].gear_id === gear.id) {
         console.log('Found a match!');
