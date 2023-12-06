@@ -4,14 +4,13 @@ import { useSelector } from 'react-redux';
 import { SidebarData } from './SidebarData';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-import './SideBar.css'; // Adjust the path as necessary
+import './SideBar.css';
 import { IconContext } from 'react-icons';
 
 function SideBar() {
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
 
-  // Get the user object from Redux store
   const user = useSelector((store) => store.user);
 
   return (
@@ -30,9 +29,8 @@ function SideBar() {
               </Link>
             </li>
             {SidebarData.map((item, index) => {
-              // Adjust these conditions based on your specific requirements
               if (!user.id && (item.title === 'Guitars' || item.title === 'Amps' || item.title === 'Accessories' || item.title === 'Following' || item.title === 'Liked' || item.title === 'Add Gear' || item.title === 'All Gear')) {
-                return null; // Don't render these items for non-logged in users
+                return null;
               }
 
               return (
